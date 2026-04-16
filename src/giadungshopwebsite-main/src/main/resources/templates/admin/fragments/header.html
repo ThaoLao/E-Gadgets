@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no"
+          name="viewport"/>
+    <meta content="" name="description"/>
+    <meta content="" name="producer"/>
+    <title>GiaDungShop - Admin</title>
+    <link
+            rel="stylesheet"
+            th:href="@{/css/admin/style.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/admin/styles.css}"/>
+    <script crossorigin="anonymous"
+            th:src="@{/js/admin/fontawesome-all.js}"></script>
+    <style>
+        .modern-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #fff !important;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .navbar-brand:hover {
+            color: #f8f9fa !important;
+            transform: translateY(-1px);
+            transition: all 0.3s ease;
+        }
+        
+        .sidebar-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            border-radius: 8px;
+            padding: 8px 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .sidebar-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+        
+        .user-dropdown .nav-link {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .user-dropdown .nav-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+        
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            padding: 8px 0;
+            margin-top: 8px;
+        }
+        
+        .dropdown-item {
+            padding: 10px 20px;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            margin: 2px 8px;
+        }
+        
+        .dropdown-item:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            transform: translateX(5px);
+        }
+        
+        .dropdown-divider {
+            margin: 8px 0;
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body class="sb-nav-fixed">
+<div th:fragment="header_nav">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark modern-header">
+        <!-- Navbar Brand-->
+<!--        <a class="navbar-brand ps-3" th:href="@{/}">-->
+<!--            <i class="fas fa-home me-2"></i>GiaDungShop-->
+<!--        </a>-->
+        <!-- Sidebar Toggle-->
+        <button class="btn sidebar-toggle order-1 order-lg-0 me-4 me-lg-0"
+                href="#!" id="sidebarToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <!-- Navbar Search-->
+        <form
+                class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0"></form>
+        <!-- Navbar-->
+        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+            <li class="nav-item dropdown user-dropdown">
+                <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                   href="#" id="navbarDropdown" role="button">
+                    <i class="fas fa-user fa-fw"></i>
+                </a>
+                <ul aria-labelledby="navbarDropdown"
+                    class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#!">
+                        <i class="fas fa-cog me-2"></i>Cài đặt
+                    </a></li>
+                    <li><a class="dropdown-item" href="#!">
+                        <i class="fas fa-chart-line me-2"></i>Hoạt động
+                    </a></li>
+                    <li>
+                        <hr class="dropdown-divider"/>
+                    </li>
+                    <li><a class="dropdown-item" th:href="@{/logout}">
+                        <i class="fas fa-sign-out-alt me-2"></i>Đăng xuất
+                    </a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>
+</body>
+</html>

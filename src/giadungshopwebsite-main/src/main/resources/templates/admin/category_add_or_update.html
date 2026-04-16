@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+    <meta content="" name="description"/>
+    <meta content="" name="producer"/>
+    <title>Admin - Thêm/Cập nhật danh mục</title>
+    <link rel="stylesheet" th:href="@{/css/admin/styles.css}"/>
+    <link rel="stylesheet" th:href="@{/css/admin/admin_sidebar.css}">
+    <script crossorigin="anonymous" th:src="@{/js/admin/fontawesome-all.js}"></script>
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .page-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .page-title i {
+            margin-right: 15px;
+            font-size: 1.8rem;
+        }
+        
+        .page-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .form-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 2rem;
+        }
+        
+        .form-label {
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 0.8rem;
+            display: block;
+            font-size: 1rem;
+        }
+        
+        .form-control {
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 15px 20px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+        }
+        
+        .form-control:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 15px rgba(102, 126, 234, 0.2);
+            outline: none;
+            background: white;
+        }
+        
+        .modern-btn {
+            border-radius: 12px;
+            padding: 15px 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .modern-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-primary-modern {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .alert-modern {
+            border: none;
+            border-radius: 15px;
+            padding: 1rem 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .alert-success-modern {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            color: white;
+        }
+        
+        .form-icon {
+            color: #667eea;
+            margin-right: 8px;
+        }
+        
+        .textarea-modern {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-section {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #e9ecef;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body class="sb-nav-fixed">
+<div th:replace="admin/fragments/header :: header_nav"></div>
+<div id="layoutSidenav">
+    <div th:replace="admin/fragments/side_navbar :: side_navbar"></div>
+    <!-- Copy den day-->
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <!-- Page Header -->
+                <div class="page-header">
+                    <h1 class="page-title">
+                        <i class="fas fa-tags"></i>
+                        Thêm/Cập nhật danh mục
+                    </h1>
+                    <p class="page-subtitle">Quản lý thông tin danh mục sản phẩm</p>
+                </div>
+
+                <!-- Alert Messages -->
+                <div class="alert alert-success-modern alert-modern" role="alert" th:if="${message}">
+                    <i class="fas fa-check-circle me-2"></i>
+                    <span th:text="${message}"></span>
+                </div>
+
+                <!-- Form Container -->
+                <div class="form-container">
+                    <form method="post" th:action="@{/admin/categories_management/add_or_update}" th:object="${category}">
+                        <!-- Category ID (hidden) -->
+                        <input th:field="*{id}" type="hidden"/>
+
+                        <!-- Category Name -->
+                        <div class="form-group">
+                            <label for="categoryName" class="form-label">
+                                <i class="fas fa-tag form-icon"></i>Tên danh mục:
+                            </label>
+                            <input class="form-control" id="categoryName" placeholder="Nhập tên danh mục" required th:field="*{name}" type="text"/>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="form-group">
+                            <label for="description" class="form-label">
+                                <i class="fas fa-align-left form-icon"></i>Mô tả:
+                            </label>
+                            <textarea class="form-control textarea-modern" id="description" placeholder="Nhập mô tả danh mục" rows="6" th:field="*{description}"></textarea>
+                        </div>
+
+                        <!-- Submit Section -->
+                        <div class="submit-section">
+                            <button class="btn modern-btn btn-primary-modern" type="submit">
+                                <i class="fas fa-save"></i>
+                                Lưu danh mục
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <div th:replace="admin/fragments/footer :: footer"></div>
+    </div>
+</div>
+
+<script crossorigin="anonymous" th:src="@{/js/admin/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/js/admin/jquery-360-min.js}"></script>
+<script th:src="@{/js/admin/scripts.js}"></script>
+<script th:src="@{/js/admin/AddOrder.js}"></script>
+</body>
+
+</html>

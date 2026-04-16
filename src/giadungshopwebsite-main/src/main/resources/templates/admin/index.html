@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+    <meta content="" name="description"/>
+    <meta content="" name="producer"/>
+    <title>Dashboard - GiaDungShop Admin</title>
+    <link rel="stylesheet" th:href="@{/css/admin/admin.bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/admin/styles.css}"/>
+    <link rel="stylesheet" th:href="@{/css/admin/admin_sidebar.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script crossorigin="anonymous" th:src="@{/js/admin/fontawesome-all.js}"></script>
+    <style>
+        .modern-card {
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .modern-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .modern-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+        
+        .stats-card-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .stats-card-warning {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+        
+        .stats-card-success {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+        }
+        
+        .stats-card-danger {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            color: white;
+        }
+        
+        .card-icon {
+            font-size: 2.5rem;
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+        
+        .card-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .card-value {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .card-footer {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .modern-section {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+        
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            margin: 0;
+        }
+        
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-title i {
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .modern-table {
+            margin: 0;
+        }
+        
+        .modern-table thead th {
+            background: #f8f9fa;
+            border: none;
+            padding: 1rem;
+            font-weight: 600;
+            color: #495057;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+        
+        .modern-table tbody td {
+            padding: 1rem;
+            border: none;
+            border-bottom: 1px solid #f1f3f4;
+            vertical-align: middle;
+        }
+        
+        .modern-table tbody tr:hover {
+            background: rgba(102, 126, 234, 0.05);
+            transform: scale(1.01);
+            transition: all 0.3s ease;
+        }
+        
+        .modern-btn {
+            border-radius: 10px;
+            padding: 8px 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .modern-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-primary-modern {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-danger-modern {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+        
+        .welcome-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .welcome-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .welcome-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .breadcrumb-modern {
+            background: transparent;
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+        
+        .breadcrumb-modern .breadcrumb-item {
+            color: #6c757d;
+        }
+        
+        .breadcrumb-modern .breadcrumb-item.active {
+            color: #667eea;
+            font-weight: 600;
+        }
+        
+        .chart-container {
+            padding: 2rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .chart-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .chart-title i {
+            margin-right: 10px;
+            color: #667eea;
+        }
+        
+        .select-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .select-container h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #495057;
+        }
+        
+        .custom-select-wrapper {
+            position: relative;
+            display: flex;
+            width: 300px;
+        }
+        
+        .monthSelect {
+            width: 100%;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: 2px solid #e9ecef;
+            border-radius: 25px;
+            background-color: #fff;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23333" d="M2 0L0 2h4z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 10px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        
+        .monthSelect:hover {
+            border-color: #667eea;
+        }
+        
+        .monthSelect:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 10px rgba(102, 126, 234, 0.2);
+        }
+    </style>
+</head>
+
+<body class="sb-nav-fixed">
+<!-- Copy tu day-->
+<div th:replace="admin/fragments/header :: header_nav"></div>
+<div id="layoutSidenav">
+    <div th:replace="admin/fragments/side_navbar :: side_navbar"></div>
+    <!-- Copy den day-->
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <!-- Welcome Section -->
+                <div class="welcome-section">
+                    <h1 class="welcome-title">
+                        <i class="fas fa-tachometer-alt me-3"></i>
+                        Xin chào, <span th:text="${currentUser.fullName}"></span>
+                    </h1>
+                    <p class="welcome-subtitle">Chào mừng bạn đến với trang quản trị GiaDungShop</p>
+                </div>
+                
+                <ol class="breadcrumb breadcrumb-modern">
+                    <li class="breadcrumb-item active">
+                        <i class="fas fa-home me-1"></i>Dashboard
+                    </li>
+                </ol>
+                
+                <!-- Stats Cards -->
+                <div class="row mb-4">
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card modern-card stats-card-primary">
+                            <div class="card-body text-center">
+                                <i class="fas fa-shopping-cart card-icon"></i>
+                                <div class="card-title">Tổng số đơn hàng</div>
+                                <div class="card-value" th:text="${numberOfOrders}"></div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="small text-white">
+                                    <i class="fas fa-angle-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card modern-card stats-card-warning">
+                            <div class="card-body text-center">
+                                <i class="fas fa-users card-icon"></i>
+                                <div class="card-title">Số người dùng</div>
+                                <div class="card-value" th:text="${numberOfUsers}"></div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="small text-white">
+                                    <i class="fas fa-angle-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card modern-card stats-card-success">
+                            <div class="card-body text-center">
+                                <i class="fas fa-dollar-sign card-icon"></i>
+                                <div class="card-title">Tổng doanh thu</div>
+                                <div class="card-value"
+                                     th:text="${#numbers.formatDecimal(__${(totalRevenue)}__, 0, 'POINT', 0, 'POINT')} + ' VND'"></div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="small text-white">
+                                    <i class="fas fa-angle-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card modern-card stats-card-danger">
+                            <div class="card-body text-center">
+                                <i class="fas fa-box card-icon"></i>
+                                <div class="card-title">Số sản phẩm</div>
+                                <div class="card-value" th:text="${numberOfProducts}"></div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="small text-white">
+                                    <i class="fas fa-angle-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart Section 1 -->
+                <div class="chart-container">
+                    <div class="select-container">
+                        <h3>
+                            <i class="fas fa-chart-bar me-2"></i>
+                            Doanh thu top 10 sản phẩm đồ điện tử bán chạy nhất
+                        </h3>
+                        <div class="custom-select-wrapper">
+                            <label for="monthSelect"></label>
+                            <select class="monthSelect" id="monthSelect">
+                            </select>
+                        </div>
+                    </div>
+                    <canvas height="400" id="barProductChart" style="max-height: 400px;" width="400"></canvas>
+                </div>
+
+                <!-- Chart Section 2 -->
+                <div class="chart-container">
+                    <div class="select-container">
+                        <h3>
+                            <i class="fas fa-chart-line me-2"></i>
+                            Doanh thu từng tháng trong năm
+                        </h3>
+                        <div class="custom-select-wrapper">
+                            <label for="monthSelect2"></label>
+                            <select class="monthSelect" id="monthSelect2">
+                            </select>
+                        </div>
+                    </div>
+                    <canvas height="400" id="pieCategoryChart" style="max-height: 400px;" width="400"></canvas>
+                </div>
+
+                <!-- Recent Orders Table -->
+                <div class="modern-section">
+                    <div class="section-header">
+                        <h2 class="section-title">
+                            <i class="fas fa-table"></i>
+                            Các đơn hàng gần đây
+                        </h2>
+                    </div>
+                    <div class="p-4">
+                        <div class="mb-3">
+                            <button class="btn modern-btn btn-primary-modern me-2" th:onclick="'exportOrderHtml()'">
+                                <i class="fas fa-file-export me-1"></i>Xuất file HTML
+                            </button>
+                            <button class="btn modern-btn btn-danger-modern" th:onclick="'exportOrderPdf()'">
+                                <i class="fas fa-file-pdf me-1"></i>Xuất file PDF
+                            </button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table modern-table">
+                                <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Mã đơn hàng</th>
+                                    <th>Người nhận</th>
+                                    <th>Số điện thoại</th>
+                                    <th>Email</th>
+                                    <th>Ngày tạo</th>
+                                    <th>Tổng giá</th>
+                                    <th>Trạng thái</th>
+                                    <th>Phương thức thanh toán</th>
+                                    <th>Hành động</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each="order : ${orders}">
+                                    <td th:text="${order.id}"></td>
+                                    <td th:text="${order.code == null ? '' : order.code}"></td>
+                                    <td th:text="${order.reciever}"></td>
+                                    <td th:text="${order.phoneNumber}"></td>
+                                    <td th:text="${order.emailAddress}"></td>
+                                    <td th:text="${#dates.format(order.createdAt, 'yyyy-MM-dd HH:mm:ss')}"></td>
+                                    <td th:text="${#numbers.formatDecimal(__${(order.totalPrice)}__, 0, 'POINT', 0, 'POINT')} + ' VND'"></td>
+                                    <td th:text="${order.status}"></td>
+                                    <td th:text="${order.paymentMethod}"></td>
+                                    <td>
+                                        <a class="btn modern-btn btn-primary-modern btn-sm"
+                                           th:href="@{/admin/orders_management/details/__${order.id}__}">
+                                            <i class="fas fa-eye me-1"></i>Chi tiết
+                                        </a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div th:replace="admin/fragments/footer :: footer"></div>
+    </div>
+</div>
+<script crossorigin="anonymous" th:src="@{/js/admin/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/js/admin/scripts.js}"></script>
+<script crossorigin="anonymous" th:src="@{/js/admin/chart.js}"></script>
+<script crossorigin="anonymous" th:src="@{/js/admin/simple-datatables.min.js}"></script>
+<script th:src="@{/js/admin/datatables-simple-demo.js}"></script>
+
+<script th:inline="javascript">
+
+    function exportProductHtml(){
+        var selectedMonth = $('#monthSelect').val();
+        const url = `/admin/export/product/${selectedMonth}/html`;
+        $.ajax({
+            url: url,
+            method: 'GET',
+            data: {month: selectedMonth},
+            success: function (res) {
+                alert(res);
+            },
+            error: function (error) {
+                console.log("Error:", error);
+            }})
+    }
+
+    function exportProductPdf(){
+        var selectedMonth = $('#monthSelect').val();
+        const url = `/admin/export/product/${selectedMonth}/pdf`;
+        $.ajax({
+            url: url,
+            method: 'GET',
+            data: {month: selectedMonth},
+            success: function (res) {
+                alert(res);
+            },
+            error: function (error) {
+                console.log("Error:", error);
+            }})
+    }
+
+    function exportCategoryPdf(){
+        var selectedMonth = $('#monthSelect').val();
+        const url = `/admin/export/category/${selectedMonth}/pdf`;
+        $.ajax({
+            url: url,
+            method: 'GET',
+            data: {month: selectedMonth},
+            success: function (res) {
+                alert(res);
+            },
+            error: function (error) {
+                console.log("Error:", error);
+            }})
+    }
+
+    function exportCategoryHtml(){
+        var selectedMonth = $('#monthSelect').val();
+        const url = `/admin/export/category/${selectedMonth}/html`;
+        $.ajax({
+            url: url,
+            method: 'GET',
+            data: {month: selectedMonth},
+            success: function (res) {
+                alert(res);
+            },
+            error: function (error) {
+                console.log("Error:", error);
+            }})
+    }
+
+    function exportOrderPdf(){
+        const url = `/admin/export/order/pdf`;
+        $.ajax({
+            url: url,
+            method: 'GET',
+            success: function (res) {
+                alert(res);
+            },
+            error: function (error) {
+                console.log("Error:", error);
+            }})
+    }
+
+    function exportOrderHtml(){
+        const url = `/admin/export/order/html`;
+        $.ajax({
+            url: url,
+            method: 'GET',
+            success: function (res) {
+                alert(res);
+            },
+            error: function (error) {
+                console.log("Error:", error);
+            }})
+    }
+
+    $(document).ready(function () {
+        // Lấy tháng hiện tại
+        var currentMonth = new Date().getMonth() + 1; // getMonth() trả về giá trị từ 0-11
+
+        var currentYear = new Date().getFullYear() + 1; // getMonth() trả về giá trị từ 0-11
+
+        // Tạo các tùy chọn cho select dựa trên tháng hiện tại
+        for (var month = 1; month <= currentMonth; month++) {
+            $('#monthSelect').append(new Option("Tháng " + month, month));
+
+        }
+
+        for (var year = 2010; year <= currentYear; year++){
+            $('#monthSelect2').append(new Option("Năm " + year, year));
+        }
+
+
+        $('#monthSelect').val(currentMonth);
+        $('#monthSelect2').val(currentYear);
+
+        fetchData(currentMonth);
+        fetchRevenueByMonthData(currentMonth);
+
+
+        $('#monthSelect').change(function () {
+            var selectedMonth = $('#monthSelect').val();
+            fetchData(selectedMonth);
+        });
+
+        $('#monthSelect2').change(function () {
+            var selectedYear = $('#monthSelect2').val();
+            fetchRevenueByMonthData(selectedYear);
+        });
+
+        function fetchData(selectedMonth) {
+            const url = `/api/v1/get-revenue/products-by-month/${selectedMonth}`;
+            $.ajax({
+                url: url,
+                method: 'GET',
+                contentType: "application/json",
+                data: {month: selectedMonth},
+                success: function (res) {
+
+                    var labels = [];
+                    var revenues = [];
+
+                    res.data.forEach(function (item) {
+                        labels.push(item.title);
+                        revenues.push(item.totalRevenue);
+                    });
+
+                    // Giả sử response là một object chứa dữ liệu doanh thu
+                    // alert(revenues);
+                    updateChart(labels, revenues);
+                },
+                error: function (error) {
+                    console.log("Error:", error);
+                }
+            });
+        }
+
+        function fetchRevenueByMonthData(selectedYear) {
+            const url = `/api/v1/get-revenue/monthly-revenue-by-year/${selectedYear}`;
+            $.ajax({
+                url: url,
+                method: 'GET',
+                contentType: "application/json",
+                data: {selectedYear: selectedYear},
+                success: function (res) {
+
+                    var labels = [];
+                    var revenues = [];
+
+                    res.data.forEach(function (item) {
+                        labels.push(item.month);
+                        revenues.push(item.revenue);
+                    });
+
+                    console.log(res.data);
+
+                    // alert(labels);
+
+                    // Giả sử response là một object chứa dữ liệu doanh thu
+                    // alert(revenues);
+                    updatePieChart(labels, revenues);
+                },
+                error: function (error) {
+                    console.log("Error:", error);
+                }
+            });
+        }
+
+        function updateChart(labels, data) {
+            var ctx = document.getElementById('barProductChart').getContext('2d');
+            if (window.myBarChart) {
+                window.myBarChart.destroy();
+            }
+            window.myBarChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Doanh thu',
+                        data: data,
+                        backgroundColor: [
+                            'rgba(102, 126, 234, 0.2)',
+                            'rgba(118, 75, 162, 0.2)',
+                            'rgba(240, 147, 251, 0.2)',
+                            'rgba(245, 87, 108, 0.2)',
+                            'rgba(79, 172, 254, 0.2)',
+                            'rgba(0, 242, 254, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(102, 126, 234, 1)',
+                            'rgba(118, 75, 162, 1)',
+                            'rgba(240, 147, 251, 1)',
+                            'rgba(245, 87, 108, 1)',
+                            'rgba(79, 172, 254, 1)',
+                            'rgba(0, 242, 254, 1)'
+                        ],
+                        borderWidth: 2,
+                        borderRadius: 8,
+                        borderSkipped: false,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.1)'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function updatePieChart(labels, data) {
+            var ctx2 = document.getElementById('pieCategoryChart').getContext('2d');
+            if (window.myPieChart) {
+                window.myPieChart.destroy();
+            }
+            window.myPieChart = new Chart(ctx2, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Doanh thu',
+                        data: data,
+                        backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                        borderColor: '#667eea',
+                        borderWidth: 3,
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: '#667eea',
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2,
+                        pointRadius: 6,
+                        pointHoverRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.1)'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    });
+</script>
+</body>
+
+</html>

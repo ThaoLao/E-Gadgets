@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+    <meta content="" name="description"/>
+    <meta content="" name="producer"/>
+    <title>Admin - Quản lý bài viết</title>
+    <link rel="stylesheet" th:href="@{/css/admin/styles.css}"/>
+    <script crossorigin="anonymous" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script crossorigin="anonymous" th:src="@{/js/admin/fontawesome-all.js}"></script>
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .page-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .page-title i {
+            margin-right: 15px;
+            font-size: 1.8rem;
+        }
+
+        .page-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .search-form {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .form-control, .form-select {
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 10px 15px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 15px rgba(102, 126, 234, 0.2);
+            outline: none;
+            background: white;
+        }
+
+        .modern-btn {
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .modern-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary-modern {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-danger-modern {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+            color: white;
+        }
+
+        .modern-table {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .modern-table thead th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 1.5rem 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .modern-table tbody td {
+            padding: 1.5rem 1rem;
+            border: none;
+            border-bottom: 1px solid #f1f3f4;
+            vertical-align: middle;
+        }
+
+        .modern-table tbody tr:hover {
+            background: rgba(102, 126, 234, 0.05);
+            transform: scale(1.01);
+            transition: all 0.3s ease;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .action-buttons .btn {
+            font-size: 0.75rem;
+            padding: 6px 12px;
+        }
+
+        .pagination-modern {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        .pagination-modern .page-link {
+            border: none;
+            color: #667eea;
+            padding: 10px 15px;
+            margin: 0 2px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .pagination-modern .page-link:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .pagination-modern .page-item.active .page-link {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .alert-modern {
+            border: none;
+            border-radius: 15px;
+            padding: 1rem 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .alert-primary-modern {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .blog-id {
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .blog-title {
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .blog-author {
+            color: #667eea;
+            font-weight: 500;
+        }
+
+        .blog-summary {
+            max-width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            color: #6c757d;
+        }
+
+        .blog-image {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .date-badge {
+            background: #f8f9fa;
+            color: #495057;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .modal-modern .modal-content {
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-modern .modal-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .modal-modern .btn-close {
+            filter: invert(1);
+        }
+
+        .modal-modern .modal-footer {
+            border: none;
+            padding: 1.5rem;
+        }
+
+        /* Thêm Responsive CSS cho Bảng */
+        @media (max-width: 768px) {
+            /* Ẩn các cột ít quan trọng */
+            .modern-table thead th:nth-child(4), /* Ngày đăng */
+            .modern-table tbody td:nth-child(4),
+            .modern-table thead th:nth-child(5), /* Tóm tắt */
+            .modern-table tbody td:nth-child(5),
+            .modern-table thead th:nth-child(6), /* Ảnh thumbnail */
+            .modern-table tbody td:nth-child(6) {
+                display: none;
+            }
+
+            /* Điều chỉnh lại padding/font size */
+            .modern-table tbody td {
+                padding: 1rem 0.5rem;
+                font-size: 0.9rem;
+            }
+
+            .action-buttons {
+                gap: 4px;
+            }
+
+            .action-buttons .btn {
+                font-size: 0.65rem;
+                padding: 4px 8px;
+            }
+
+            /* Tối ưu hóa form tìm kiếm */
+            .search-form {
+                padding: 1rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" th:href="@{/css/admin/admin_sidebar.css}">
+</head>
+
+<body class="sb-nav-fixed">
+<div th:replace="admin/fragments/header :: header_nav"></div>
+<div id="layoutSidenav">
+    <div th:replace="admin/fragments/side_navbar :: side_navbar"></div>
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <div class="page-header">
+                    <h1 class="page-title">
+                        <i class="fas fa-blog"></i>
+                        Quản lý bài viết
+                    </h1>
+                    <p class="page-subtitle">Quản lý các bài viết và tin tức trên website</p>
+                </div>
+
+                <div class="alert alert-primary-modern alert-modern" role="alert" th:if="${message}">
+                    <i class="fas fa-check-circle me-2"></i>
+                    <span th:text="${message}"></span>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div></div>
+                    <a class="btn modern-btn btn-primary-modern" th:href="@{/admin/blogs_management/add}">
+                        <i class="fas fa-plus"></i>
+                        Thêm bài viết mới
+                    </a>
+                </div>
+
+                <div class="search-form">
+                    <form th:action="@{/admin/blogs_management}" th:method="get" th:object="${search}">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="userId" class="form-label">
+                                        <i class="fas fa-user me-2"></i>Tìm theo người đăng:
+                                    </label>
+                                    <select class="form-select" id="userId" name="userId" th:field="*{userId}">
+                                        <option selected value="">Tất cả người đăng bài</option>
+                                        <option th:each="user : ${users}" th:text="${user.fullName}" th:value="${user.id}"></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="keyword" class="form-label">
+                                        <i class="fas fa-search me-2"></i>Từ khoá:
+                                    </label>
+                                    <input class="form-control" id="keyword" name="keyword" placeholder="Nhập từ khoá tìm kiếm" th:field="*{keyword}" type="text"/>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="form-label">&nbsp;</label>
+                                    <button class="btn modern-btn btn-primary-modern w-100" type="submit">
+                                        <i class="fas fa-search"></i> Tìm kiếm
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modern-table table-responsive">
+                    <table class="table mb-0">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tiêu đề</th>
+                            <th>Người đăng bài</th>
+                            <th>Ngày đăng</th>
+                            <th>Tóm tắt</th>
+                            <th>Ảnh thumbnail</th>
+                            <th>Hành động</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="blog : ${blogPage}">
+                            <td>
+                                <span class="blog-id" th:text="${blog.id}"></span>
+                            </td>
+                            <td>
+                                <span class="blog-title" th:text="${blog.title}"></span>
+                            </td>
+                            <td>
+                                <span class="blog-author" th:text="${blog.getUser().getFullName()}"></span>
+                            </td>
+                            <td>
+                                <span class="date-badge" th:text="${#dates.format(blog.createdAt, 'dd/MM/yyyy')}"></span>
+                            </td>
+                            <td class="blog-summary" th:text="${blog.summary}"></td>
+                            <td>
+                                <img class="blog-image" th:src="${blog.thumbnail}" alt="Blog Thumbnail">
+                            </td>
+                            <td>
+                                <div class="action-buttons">
+                                    <a class="btn modern-btn btn-primary-modern btn-sm" th:href="@{/admin/blogs_management/edit/__${blog.id}__}">
+                                        <i class="fas fa-edit"></i>
+                                        Sửa
+                                    </a>
+                                    <button class="btn modern-btn btn-danger-modern btn-sm btn-delete" th:data-product-id="${blog.id}">
+                                        <i class="fas fa-trash"></i>
+                                        Xóa
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                    <nav aria-label="Page navigation example" class="pagination-modern">
+                        <ul class="pagination mb-0">
+                            <li class="page-item" th:classappend="${currentPage == 1} ? disabled">
+                                <a class="page-link" th:href="@{/admin/blogs_management(page=1)}" th:if="${currentPage > 1}">
+                                    <i class="fas fa-angle-double-left"></i> Đầu
+                                </a>
+                            </li>
+                            <li class="page-item" th:classappend="${currentPage == 1} ? disabled">
+                                <a class="page-link" th:href="@{/admin/blogs_management(page=${currentPage - 1})}" th:if="${currentPage > 1}">
+                                    <i class="fas fa-angle-left"></i> Trước
+                                </a>
+                            </li>
+                            <li class="page-item" th:classappend="${currentPage == totalPages} ? disabled">
+                                <a class="page-link" th:href="@{/admin/blogs_management(page=${currentPage + 1})}" th:if="${currentPage < totalPages}">
+                                    Sau <i class="fas fa-angle-right"></i>
+                                </a>
+                            </li>
+                            <li class="page-item" th:classappend="${currentPage == totalPages} ? disabled">
+                                <a class="page-link" th:href="@{/admin/blogs_management(page=${totalPages})}" th:if="${currentPage < totalPages}">
+                                    Cuối <i class="fas fa-angle-double-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </main>
+        <div th:replace="admin/fragments/footer :: footer"></div>
+    </div>
+</div>
+
+<div aria-hidden="true" aria-labelledby="deleteConfirmationModalLabel" class="modal fade modal-modern" id="deleteConfirmationModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteConfirmationModalLabel">
+                    <i class="fas fa-exclamation-triangle me-2"></i>
+                    Xác nhận xoá bài viết
+                </h5>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+            </div>
+            <div class="modal-body">
+                <p>Bạn có chắc chắn muốn xoá bài viết này không?</p>
+                <p class="text-muted small">Hành động này không thể hoàn tác!</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn modern-btn btn-secondary" data-bs-dismiss="modal" type="button">
+                    <i class="fas fa-times"></i> Hủy
+                </button>
+                <a class="btn modern-btn btn-danger-modern" id="deleteButton">
+                    <i class="fas fa-trash"></i> Xoá
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script crossorigin="anonymous" th:src="@{/js/admin/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/js/admin/scripts.js}"></script>
+<script th:src="@{/js/admin/contacts.js}"></script>
+
+<script>
+    $(document).ready(function () {
+        $(".btn-delete").on("click", function () {
+            var productId = $(this).attr("data-product-id");
+            var deleteUrl = "/admin/blogs_management/delete/" + productId
+
+            $("#deleteButton").attr("href", deleteUrl);
+            $("#deleteConfirmationModal").modal("show");
+        });
+    });
+</script>
+</body>
+
+</html>

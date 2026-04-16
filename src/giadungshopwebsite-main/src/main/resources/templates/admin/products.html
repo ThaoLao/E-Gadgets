@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+    <meta content="" name="description"/>
+    <meta content="" name="producer"/>
+    <title>Admin - Sản Phẩm</title>
+    <link rel="stylesheet" th:href="@{/css/admin/styles.css}"/>
+    <link rel="stylesheet" th:href="@{/css/admin/admin_sidebar.css}">
+    <script crossorigin="anonymous" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script crossorigin="anonymous" th:src="@{/js/admin/fontawesome-all.js}"></script>
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .page-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .page-title i {
+            margin-right: 15px;
+            font-size: 1.8rem;
+        }
+        
+        .page-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .modern-card {
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .modern-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .modern-btn {
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .modern-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-primary-modern {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-success-modern {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            color: white;
+        }
+        
+        .btn-warning-modern {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+        
+        .btn-danger-modern {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+            color: white;
+        }
+        
+        .search-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .form-control, .form-select {
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 12px 16px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 10px rgba(102, 126, 234, 0.2);
+            outline: none;
+        }
+        
+        .modern-table {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+        
+        .modern-table thead th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 1.5rem 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+        
+        .modern-table tbody td {
+            padding: 1.5rem 1rem;
+            border: none;
+            border-bottom: 1px solid #f1f3f4;
+            vertical-align: middle;
+        }
+        
+        .modern-table tbody tr:hover {
+            background: rgba(102, 126, 234, 0.05);
+            transform: scale(1.01);
+            transition: all 0.3s ease;
+        }
+        
+        .product-image {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .action-buttons .btn {
+            font-size: 0.75rem;
+            padding: 6px 12px;
+        }
+        
+        .pagination-modern {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .pagination-modern .page-link {
+            border: none;
+            color: #667eea;
+            padding: 10px 15px;
+            margin: 0 2px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .pagination-modern .page-link:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .pagination-modern .page-item.active .page-link {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .alert-modern {
+            border: none;
+            border-radius: 15px;
+            padding: 1rem 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .alert-primary-modern {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .alert-danger-modern {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+            color: white;
+        }
+        
+        .modal-modern .modal-content {
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        .modal-modern .modal-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 20px 20px 0 0;
+        }
+        
+        .modal-modern .btn-close {
+            filter: invert(1);
+        }
+        
+        .modal-modern .modal-footer {
+            border: none;
+            padding: 1.5rem;
+        }
+    </style>
+</head>
+
+<body class="sb-nav-fixed">
+<!-- Copy tu day-->
+<div th:replace="admin/fragments/header :: header_nav"></div>
+<div id="layoutSidenav">
+    <div th:replace="admin/fragments/side_navbar :: side_navbar"></div>
+    <!-- Copy den day-->
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <!-- Page Header -->
+                <div class="page-header">
+                    <h1 class="page-title">
+                        <i class="fas fa-box"></i>
+                        Quản lý sản phẩm
+                    </h1>
+                    <p class="page-subtitle">Quản lý danh sách sản phẩm đồ điện tử</p>
+                </div>
+
+                <!-- Alert Messages -->
+                <div class="alert alert-primary-modern alert-modern" role="alert" th:if="${message == 'Xoá đồ điện tử thành công!'}">
+                    <i class="fas fa-check-circle me-2"></i>
+                    <span th:text="${message}"></span>
+                </div>
+
+                <div class="alert alert-danger-modern alert-modern" role="alert" th:if="${message == 'Đồ Điện Tử đã có trong các đơn hàng , vui lòng xoá các đơn hàng có đồ điện tử trước'}">
+                    <i class="fas fa-exclamation-triangle me-2"></i>
+                    <span th:text="${message}"></span>
+                </div>
+
+                <!-- Add Product Button -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div></div>
+                    <a class="btn modern-btn btn-primary-modern" th:href="@{/admin/products_management/add}">
+                        <i class="fas fa-plus"></i>
+                        Thêm sản phẩm mới
+                    </a>
+                </div>
+
+                <!-- Search Form -->
+                <div class="search-form">
+                    <form th:action="@{/admin/products_management}" th:method="get" th:object="${search}">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="categoryId" class="form-label">
+                                        <i class="fas fa-tags me-1"></i>Tìm theo danh mục
+                                    </label>
+                                    <select class="form-select" id="categoryId" name="categoryId" th:field="*{categoryId}">
+                                        <option selected value="">Tất cả danh mục</option>
+                                        <option th:each="category : ${categories}" th:text="${category.name}" th:value="${category.id}"></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="keyword" class="form-label">
+                                        <i class="fas fa-search me-1"></i>Từ khoá tìm kiếm
+                                    </label>
+                                    <input class="form-control" id="keyword" name="keyword" placeholder="Nhập từ khoá tìm kiếm" th:field="*{keyword}" type="text"/>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="form-label">&nbsp;</label>
+                                    <button class="btn modern-btn btn-primary-modern w-100" type="submit">
+                                        <i class="fas fa-search"></i>
+                                        Tìm kiếm
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Products Table -->
+                <div class="modern-table">
+                    <table class="table mb-0">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Người nhập hàng</th>
+                            <th>Nhà phân phối</th>
+                            <th>Ngày nhập kho</th>
+                            <th>Giá gốc</th>
+                            <th>Giá sale</th>
+                            <th>Số lượng</th>
+                            <th>Khối lượng</th>
+                            <th>Ảnh bìa</th>
+                            <th>Hành động</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="product : ${productPage}">
+                            <td th:text="${product.id}"></td>
+                            <td>
+                                <strong th:text="${product.title}"></strong>
+                            </td>
+                            <td th:text="${product.producer}"></td>
+                            <td th:text="${product.publisher}"></td>
+                            <td th:text="${#dates.format(product.publishedDate, 'dd/MM/yyyy')}"></td>
+                            <td>
+                                <span class="badge bg-secondary" th:text="${#numbers.formatDecimal(__${(product.originalPrice)}__, 0, 'POINT', 0, 'POINT')} + ' VND'"></span>
+                            </td>
+                            <td>
+                                <span class="badge bg-success" th:text="${#numbers.formatDecimal(__${(product.salePrice)}__, 0, 'POINT', 0, 'POINT')} + ' VND'"></span>
+                            </td>
+                            <td>
+                                <span class="badge bg-info" th:text="${product.qty}"></span>
+                            </td>
+                            <td th:text="${product.weight}"></td>
+                            <td>
+                                <img class="product-image" th:src="${product.coverImage}" alt="Product Image">
+                            </td>
+                            <td>
+                                <div class="action-buttons">
+                                    <a class="btn modern-btn btn-primary-modern btn-sm" th:href="@{/admin/products_management/edit/__${product.id}__}">
+                                        <i class="fas fa-edit"></i>
+                                        Sửa
+                                    </a>
+                                    <button class="btn modern-btn btn-sm" 
+                                            th:classappend="${product.activeFlag ? 'btn-warning-modern' : 'btn-success-modern'}"
+                                            th:data-product-id="${product.id}"
+                                            th:data-action="${product.activeFlag ? false : true}"
+                                            th:text="${product.activeFlag ? 'Tạm dừng' : 'Kích hoạt'}"
+                                            onclick="deleteAction()">
+                                        <i class="fas" th:classappend="${product.activeFlag ? 'fa-pause' : 'fa-play'}"></i>
+                                    </button>
+                                    <button class="btn modern-btn btn-sm"
+                                            th:classappend="${product.getPromotion != null ? 'btn-warning-modern' : 'btn-success-modern'}"
+                                            th:data-product-id="${product.id}"
+                                            th:data-action="${product.getPromotion() != null ? false : true}"
+                                            th:text="${product.getPromotion() != null ? 'Huỷ KM' : 'Khuyến mãi'}"
+                                            onclick="promotionAction()">
+                                        <i class="fas fa-percentage"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                <div class="d-flex justify-content-center">
+                    <nav aria-label="Page navigation example" class="pagination-modern">
+                        <ul class="pagination mb-0">
+                            <li class="page-item" th:classappend="${currentPage == 1} ? disabled">
+                                <a class="page-link" th:href="@{/admin/products_management(page=1)}" th:if="${currentPage > 1}">
+                                    <i class="fas fa-angle-double-left"></i> Đầu
+                                </a>
+                            </li>
+                            <li class="page-item" th:classappend="${currentPage == 1} ? disabled">
+                                <a class="page-link" th:href="@{/admin/products_management(page=${currentPage - 1})}" th:if="${currentPage > 1}">
+                                    <i class="fas fa-angle-left"></i> Trước
+                                </a>
+                            </li>
+                            <li class="page-item" th:classappend="${currentPage == totalPages} ? disabled">
+                                <a class="page-link" th:href="@{/admin/products_management(page=${currentPage + 1})}" th:if="${currentPage < totalPages}">
+                                    Sau <i class="fas fa-angle-right"></i>
+                                </a>
+                            </li>
+                            <li class="page-item" th:classappend="${currentPage == totalPages} ? disabled">
+                                <a class="page-link" th:href="@{/admin/products_management(page=${totalPages})}" th:if="${currentPage < totalPages}">
+                                    Cuối <i class="fas fa-angle-double-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </main>
+        <div th:replace="admin/fragments/footer :: footer"></div>
+    </div>
+</div>
+
+<!-- Modal for Delete Confirmation -->
+<div aria-hidden="true" aria-labelledby="deleteConfirmationModalLabel" class="modal fade modal-modern" id="deleteConfirmationModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteConfirmationModalLabel">
+                    <i class="fas fa-exclamation-triangle me-2"></i>
+                    Xác nhận cập nhật trạng thái sản phẩm
+                </h5>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+            </div>
+            <div class="modal-body">
+                <p>Bạn có chắc chắn muốn cập nhật trạng thái sản phẩm này không?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn modern-btn btn-secondary" data-bs-dismiss="modal" type="button">
+                    <i class="fas fa-times"></i> Hủy
+                </button>
+                <a class="btn modern-btn btn-danger-modern" id="deleteButton">
+                    <i class="fas fa-check"></i> Cập nhật
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Promotion Confirmation -->
+<div aria-hidden="true" aria-labelledby="promotionConfirmationModalLabel" class="modal fade modal-modern" id="promotionConfirmationModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="promotionConfirmationModalLabel">
+                    <i class="fas fa-percentage me-2"></i>
+                    Xác nhận thêm sản phẩm vào khuyến mãi
+                </h5>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+            </div>
+            <div class="modal-body">
+                <p>Bạn có chắc chắn muốn thêm sản phẩm vào khuyến mãi không?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn modern-btn btn-secondary" data-bs-dismiss="modal" type="button">
+                    <i class="fas fa-times"></i> Hủy
+                </button>
+                <a class="btn modern-btn btn-danger-modern" id="promotionButton">
+                    <i class="fas fa-check"></i> Cập nhật
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script crossorigin="anonymous" th:src="@{/js/admin/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/js/admin/scripts.js}"></script>
+<script th:src="@{/js/admin/contacts.js}"></script>
+
+<!-- JavaScript for Delete Confirmation -->
+<script>
+    $(document).ready(function () {
+        $(".btn-delete").on("click", function () {
+            var productId = $(this).attr("data-product-id");
+            var action = $(this).attr("data-action");
+            var deleteUrl = "/admin/products_management/delete/" + productId + "?activeFlag=" + action;
+
+            $("#deleteButton").attr("href", deleteUrl);
+            $("#deleteConfirmationModal").modal("show");
+        });
+
+        $(".btn-promotion").on("click", function () {
+            var productId = $(this).attr("data-product-id");
+            var promotionUrl = "/admin/products_management/promotion/" + productId;
+
+            $("#promotionButton").attr("href", promotionUrl);
+            $("#promotionConfirmationModal").modal("show");
+        });
+    });
+
+    function deleteAction() {
+        var productId = $(this).attr("data-product-id");
+        var action = $(this).attr("data-action");
+        var deleteUrl = "/admin/products_management/delete/" + productId + "?activeFlag=" + action;
+
+        $("#deleteButton").attr("href", deleteUrl);
+        $("#deleteConfirmationModal").modal("show");
+    }
+
+    function promotionAction() {
+        var productId = $(this).attr("data-product-id");
+        var action = $(this).attr("data-action");
+        var deleteUrl = "/admin/products_management/promotion/" + productId;
+
+        $("#promotionButton").attr("href", deleteUrl);
+        $("#promotionConfirmationModal").modal("show");
+    }
+</script>
+</body>
+
+</html>

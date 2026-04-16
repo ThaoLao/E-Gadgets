@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+    <meta content="" name="description"/>
+    <meta content="" name="producer"/>
+    <title>Admin - Thêm/cập nhật sản phẩm</title>
+    <link rel="stylesheet" th:href="@{/css/admin/styles.css}"/>
+    <link rel="stylesheet" th:href="@{/css/admin/admin_sidebar.css}">
+    <script crossorigin="anonymous" th:src="@{/js/admin/fontawesome-all.js}"></script>
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .page-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .page-title i {
+            margin-right: 15px;
+            font-size: 1.8rem;
+        }
+        
+        .page-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .form-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 2rem;
+        }
+        
+        .form-label {
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 0.8rem;
+            display: block;
+            font-size: 1rem;
+        }
+        
+        .form-control, .form-select {
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 15px 20px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 15px rgba(102, 126, 234, 0.2);
+            outline: none;
+            background: white;
+        }
+        
+        .form-control:hover, .form-select:hover {
+            border-color: #667eea;
+            background: white;
+        }
+        
+        .modern-btn {
+            border-radius: 12px;
+            padding: 12px 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .modern-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-primary-modern {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-success-modern {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            color: white;
+        }
+        
+        .btn-danger-modern {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+            color: white;
+        }
+        
+        .alert-modern {
+            border: none;
+            border-radius: 15px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .alert-success-modern {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            color: white;
+        }
+        
+        .alert-danger-modern {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+            color: white;
+        }
+        
+        .extra-data-container {
+            border: 2px solid #e9ecef;
+            border-radius: 15px;
+            padding: 2rem;
+            background: #f8f9fa;
+            margin-top: 1rem;
+        }
+        
+        .extra-data-header {
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .extra-data-header h5 {
+            margin: 0;
+            color: #495057;
+            font-weight: 600;
+        }
+        
+        .extra-data-field {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 1rem;
+            align-items: center;
+            background: white;
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .extra-data-field input {
+            flex: 1;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 10px 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .extra-data-field input:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 10px rgba(102, 126, 234, 0.2);
+            outline: none;
+        }
+        
+        .extra-data-field label {
+            font-weight: 600;
+            margin-right: 10px;
+            min-width: 60px;
+            color: #495057;
+        }
+        
+        .remove-extra-data {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .remove-extra-data:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+        }
+        
+        .image-upload-section {
+            background: #f8f9fa;
+            border: 2px dashed #667eea;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .image-upload-section:hover {
+            background: rgba(102, 126, 234, 0.05);
+            border-color: #764ba2;
+        }
+        
+        .image-preview {
+            max-width: 300px;
+            margin: 1rem auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .image-preview img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .scroll-to-top {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #ffffff;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .scroll-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        .input-group-modern {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        
+        .input-group-modern .form-control {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        
+        .input-group-modern .input-group-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: 2px solid #667eea;
+            border-left: none;
+            border-radius: 0 12px 12px 0;
+            padding: 15px 20px;
+            font-weight: 600;
+        }
+        
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e9ecef;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-title i {
+            margin-right: 10px;
+            color: #667eea;
+        }
+    </style>
+</head>
+
+<body class="sb-nav-fixed">
+<div th:replace="admin/fragments/header :: header_nav"></div>
+<div id="layoutSidenav">
+    <div th:replace="admin/fragments/side_navbar :: side_navbar"></div>
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <!-- Page Header -->
+                <div class="page-header">
+                    <h1 class="page-title">
+                        <i class="fas fa-plus-circle"></i>
+                        Thêm/Cập nhật Sản phẩm
+                    </h1>
+                    <p class="page-subtitle">Quản lý thông tin sản phẩm đồ điện tử</p>
+                </div>
+
+                <!-- Alert Messages -->
+                <div class="alert alert-success-modern alert-modern" role="alert" th:if="${message}">
+                    <i class="fas fa-check-circle me-2"></i>
+                    <span th:text="${message}"></span>
+                </div>
+
+                <div class="alert alert-danger-modern alert-modern" role="alert" th:if="${error}">
+                    <i class="fas fa-exclamation-triangle me-2"></i>
+                    <span th:text="${error}"></span>
+                </div>
+
+                <!-- Form Container -->
+                <div class="form-container">
+                    <form enctype="multipart/form-data" method="post" th:action="@{/admin/products_management/add}" th:object="${product}">
+                        <input th:field="*{id}" type="hidden"/>
+
+                        <!-- Basic Information Section -->
+                        <div class="section-title">
+                            <i class="fas fa-info-circle"></i>
+                            Thông tin cơ bản
+                        </div>
+
+                        <div class="form-group">
+                            <label for="productTitle" class="form-label">
+                                <i class="fas fa-tag me-1"></i>Tiêu đề sản phẩm
+                            </label>
+                            <input class="form-control" id="productTitle" placeholder="Nhập tiêu đề sản phẩm" required th:field="*{title}" type="text"/>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="productAuthor" class="form-label">
+                                    <i class="fas fa-user me-1"></i>Người nhập hàng
+                                </label>
+                                <input class="form-control" id="productAuthor" placeholder="Nhập tên người sản xuất" required th:field="*{producer}" type="text"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="productPublisher" class="form-label">
+                                    <i class="fas fa-building me-1"></i>Nhà phân phối
+                                </label>
+                                <input class="form-control" id="productPublisher" placeholder="Nhập tên nhà phân phối" required th:field="*{publisher}" type="text"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="publishedDate" class="form-label">
+                                <i class="fas fa-calendar me-1"></i>Ngày nhập kho
+                            </label>
+                            <input class="form-control" id="publishedDate" th:field="*{publishedDate}" type="date"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="categoryId" class="form-label">
+                                <i class="fas fa-tags me-1"></i>Danh mục
+                            </label>
+                            <select aria-label="Default select example" class="form-select" id="categoryId" required th:field="*{category.id}">
+                                <option selected value="-1">Chọn danh mục sản phẩm</option>
+                                <option th:each="category : ${categories}" th:text="${category.name}" th:value="${category.id}"></option>
+                            </select>
+                        </div>
+
+                        <!-- Pricing Section -->
+                        <div class="section-title">
+                            <i class="fas fa-dollar-sign"></i>
+                            Thông tin giá cả
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="originalPrice" class="form-label">
+                                    <i class="fas fa-money-bill me-1"></i>Giá gốc (VND)
+                                </label>
+                                <input class="form-control" id="originalPrice" placeholder="Nhập giá gốc" required step="0.01" th:field="*{originalPrice}" type="number"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="salePrice" class="form-label">
+                                    <i class="fas fa-tags me-1"></i>Giá bán (VND)
+                                </label>
+                                <input class="form-control" id="salePrice" placeholder="Nhập giá bán" required step="0.01" th:field="*{salePrice}" type="number"/>
+                            </div>
+                        </div>
+
+                        <!-- Inventory Section -->
+                        <div class="section-title">
+                            <i class="fas fa-boxes"></i>
+                            Thông tin kho hàng
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="quantity" class="form-label">
+                                    <i class="fas fa-cubes me-1"></i>Số lượng
+                                </label>
+                                <input class="form-control" id="quantity" placeholder="Nhập số lượng" required th:field="*{qty}" type="number"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="weight" class="form-label">
+                                    <i class="fas fa-weight me-1"></i>Khối lượng (kg)
+                                </label>
+                                <input class="form-control" id="weight" placeholder="Nhập khối lượng" required th:field="*{weight}" type="number"/>
+                            </div>
+                        </div>
+
+                        <!-- Description Section -->
+                        <div class="section-title">
+                            <i class="fas fa-align-left"></i>
+                            Mô tả sản phẩm
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description" class="form-label">
+                                <i class="fas fa-file-text me-1"></i>Mô tả chi tiết
+                            </label>
+                            <textarea class="form-control" id="description" placeholder="Nhập mô tả sản phẩm" rows="6" th:field="*{description}"></textarea>
+                        </div>
+
+                        <!-- Technical Specifications Section -->
+                        <div class="section-title">
+                            <i class="fas fa-cogs"></i>
+                            Thông số kỹ thuật
+                        </div>
+
+                        <div class="extra-data-container">
+                            <div class="extra-data-header">
+                                <h5>
+                                    <i class="fas fa-list me-2"></i>
+                                    Thuộc tính sản phẩm
+                                </h5>
+                                <button type="button" class="btn modern-btn btn-success-modern" id="addExtraDataBtn">
+                                    <i class="fas fa-plus"></i> Thêm thuộc tính
+                                </button>
+                            </div>
+                            <div id="extraDataFields">
+                                <!-- Dynamic fields will be added here -->
+                            </div>
+                        </div>
+
+                        <!-- Image Upload Section -->
+                        <div class="section-title mt-5">
+                            <i class="fas fa-image"></i>
+                            Hình ảnh sản phẩm
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">
+                                <i class="fas fa-upload me-1"></i>Ảnh bìa sản phẩm
+                            </label>
+                            <div class="image-upload-section">
+                                <div class="input-group-modern">
+                                    <input class="form-control" id="inputGroupFile02" name="cover_image" onchange="previewImage(this)" type="file"/>
+                                    <label class="input-group-text" for="inputGroupFile02">
+                                        <i class="fas fa-upload me-1"></i>Chọn ảnh
+                                    </label>
+                                </div>
+                                <p class="mt-2 mb-0 text-muted">
+                                    <i class="fas fa-info-circle me-1"></i>
+                                    Nếu không chọn ảnh mới thì sẽ sử dụng ảnh hiện tại
+                                </p>
+                                <div id="imagePreview" class="image-preview">
+                                    <!-- Hiển thị ảnh cũ nếu có -->
+                                    <img alt="cover image" th:if="${product.coverImage}" th:src="${product.coverImage}"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="d-flex justify-content-end gap-3 mt-4">
+                            <a href="javascript:history.back()" class="btn modern-btn btn-secondary">
+                                <i class="fas fa-arrow-left"></i> Quay lại
+                            </a>
+                            <button class="btn modern-btn btn-primary-modern" type="submit">
+                                <i class="fas fa-save"></i> Lưu sản phẩm
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <div th:replace="admin/fragments/footer :: footer"></div>
+        <div class="scroll-to-top" id="scrollButton" onclick="scrollToTop()">
+            <i class="fas fa-arrow-up"></i>
+        </div>
+    </div>
+</div>
+
+<script th:inline="javascript">
+    function previewImage(input) {
+        const preview = document.getElementById("imagePreview");
+
+        if (input.files && input.files[0]) {
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                const img = document.createElement("img");
+                img.src = e.target.result;
+                img.style.width = "100%";
+                img.style.height = "auto";
+                preview.innerHTML = "";
+                preview.appendChild(img);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    // Extra data management
+    let extraDataFieldCount = 0;
+
+    function addExtraDataField(key = '', value = '') {
+        const container = document.getElementById('extraDataFields');
+        const fieldDiv = document.createElement('div');
+        fieldDiv.className = 'extra-data-field';
+        fieldDiv.id = `extraDataField_${extraDataFieldCount}`;
+
+        fieldDiv.innerHTML = `
+            <label>Thuộc tính:</label>
+            <input type="text" name="extraDataKeys" placeholder="Nhập tên thuộc tính" value="${key}" class="form-control">
+            <label>Giá trị:</label>
+            <input type="text" name="extraDataValues" placeholder="Nhập giá trị thuộc tính" value="${value}" class="form-control">
+            <button type="button" class="remove-extra-data" onclick="removeExtraDataField(${extraDataFieldCount})">
+                <i class="fas fa-times"></i>
+            </button>
+        `;
+
+        container.appendChild(fieldDiv);
+        extraDataFieldCount++;
+    }
+
+    function removeExtraDataField(fieldId) {
+        const fieldElement = document.getElementById(`extraDataField_${fieldId}`);
+        if (fieldElement) {
+            fieldElement.remove();
+        }
+    }
+
+    // Initialize extra data fields when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        // Add click event to add button
+        document.getElementById('addExtraDataBtn').addEventListener('click', function() {
+            addExtraDataField();
+        });
+
+        // Load existing extra data if editing
+        let existingExtraData = /*[[${product.extraData}]]*/ '{}';
+        try {
+            // Nếu extraData là chuỗi JSON, parse nó
+            if (typeof existingExtraData === 'string') {
+                existingExtraData = JSON.parse(existingExtraData.replace(/=/g, ':'));
+                console.log(existingExtraData);
+            }
+
+            if (existingExtraData && typeof existingExtraData === 'object') {
+                Object.keys(existingExtraData).forEach(key => {
+                    addExtraDataField(key, existingExtraData[key]);
+                });
+            }
+        } catch (e) {
+            console.error('Lỗi khi parse extraData:', e);
+        }
+    });
+</script>
+
+<script>
+    // Function to show/hide the scroll-to-top button
+    function toggleScrollButton() {
+        const scrollButton = document.getElementById("scrollButton");
+        if (window.scrollY >= 200) {
+            scrollButton.style.display = "block";
+        } else {
+            scrollButton.style.display = "none";
+        }
+    }
+
+    // Function to scroll to the top of the page
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    }
+
+    // Add event listener to show/hide the scroll-to-top button
+    window.addEventListener("scroll", toggleScrollButton);
+</script>
+
+<script crossorigin="anonymous" th:src="@{/js/admin/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/js/admin/scripts.js}"></script>
+</body>
+
+</html>

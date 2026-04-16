@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+    <meta content="" name="description"/>
+    <meta content="" name="producer"/>
+    <title>Admin - Quản lý đơn hàng</title>
+    <link rel="stylesheet" th:href="@{/css/admin/styles.css}"/>
+    <link rel="stylesheet" th:href="@{/css/admin/admin_sidebar.css}">
+    <script crossorigin="anonymous" th:src="@{/js/admin/fontawesome-all.js}"></script>
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .page-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .page-title i {
+            margin-right: 15px;
+            font-size: 1.8rem;
+        }
+        
+        .page-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .filter-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .filter-form {
+            display: flex;
+            gap: 1rem;
+            align-items: end;
+        }
+        
+        .form-group {
+            flex: 1;
+        }
+        
+        .form-label {
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .form-select {
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 12px 16px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+        }
+        
+        .form-select:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 10px rgba(102, 126, 234, 0.2);
+            outline: none;
+            background: white;
+        }
+        
+        .modern-btn {
+            border-radius: 12px;
+            padding: 12px 24px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .modern-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-primary-modern {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .modern-table {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+        
+        .modern-table thead th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 1.5rem 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+        
+        .modern-table tbody td {
+            padding: 1.5rem 1rem;
+            border: none;
+            border-bottom: 1px solid #f1f3f4;
+            vertical-align: middle;
+        }
+        
+        .modern-table tbody tr:hover {
+            background: rgba(102, 126, 234, 0.05);
+            transform: scale(1.01);
+            transition: all 0.3s ease;
+        }
+        
+        .status-badge {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .status-processing {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+        
+        .status-pending {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            color: #8b4513;
+        }
+        
+        .status-delivering {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            color: #2c5530;
+        }
+        
+        .status-delivered {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            color: white;
+        }
+        
+        .status-cancelled {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+            color: white;
+        }
+        
+        .action-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .action-link:hover {
+            background: rgba(102, 126, 234, 0.1);
+            color: #764ba2;
+            transform: translateY(-1px);
+        }
+        
+        .pagination-modern {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .pagination-modern .page-link {
+            border: none;
+            color: #667eea;
+            padding: 10px 15px;
+            margin: 0 2px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .pagination-modern .page-link:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .pagination-modern .page-item.active .page-link {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .price-badge {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .order-id {
+            font-weight: 700;
+            color: #667eea;
+        }
+        
+        .order-code {
+            font-family: 'Courier New', monospace;
+            background: #f8f9fa;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body class="sb-nav-fixed">
+<div th:replace="admin/fragments/header :: header_nav"></div>
+<div id="layoutSidenav">
+    <div th:replace="admin/fragments/side_navbar :: side_navbar"></div>
+    <!-- Copy den day-->
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <!-- Page Header -->
+                <div class="page-header">
+                    <h1 class="page-title">
+                        <i class="fas fa-shopping-cart"></i>
+                        Quản lý đơn hàng
+                    </h1>
+                    <p class="page-subtitle">Theo dõi và quản lý tất cả đơn hàng của khách hàng</p>
+                </div>
+
+                <!-- Filter Section -->
+                <div class="filter-section">
+                    <form method="get" th:action="@{/admin/orders_management}">
+                        <div class="filter-form">
+                            <div class="form-group">
+                                <label for="status" class="form-label">
+                                    <i class="fas fa-filter me-1"></i>Lọc theo trạng thái
+                                </label>
+                                <select name="status" id="status" class="form-select">
+                                    <option th:selected="${selectedStatus == null}" value="">Tất cả đơn hàng</option>
+                                    <option th:selected="${selectedStatus == 'PROCESSING'}" value="PROCESSING">
+                                        <i class="fas fa-clock"></i> Đang xử lý
+                                    </option>
+                                    <option th:selected="${selectedStatus == 'PENDING'}" value="PENDING">
+                                        <i class="fas fa-hourglass-half"></i> Chờ xử lý
+                                    </option>
+                                    <option th:selected="${selectedStatus == 'DELIVERING'}" value="DELIVERING">
+                                        <i class="fas fa-truck"></i> Đang giao hàng
+                                    </option>
+                                    <option th:selected="${selectedStatus == 'DELIVERED'}" value="DELIVERED">
+                                        <i class="fas fa-check-circle"></i> Đã giao hàng
+                                    </option>
+                                    <option th:selected="${selectedStatus == 'CANCELLED'}" value="CANCELLED">
+                                        <i class="fas fa-times-circle"></i> Đã hủy
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn modern-btn btn-primary-modern">
+                                    <i class="fas fa-search"></i> Lọc đơn hàng
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Orders Table -->
+                <div class="modern-table">
+                    <table class="table mb-0">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Mã đơn hàng</th>
+                            <th>Người nhận</th>
+                            <th>Số điện thoại</th>
+                            <th>Email</th>
+                            <th>Ngày tạo</th>
+                            <th>Tổng giá</th>
+                            <th>Trạng thái</th>
+                            <th>Phương thức thanh toán</th>
+                            <th>Hành động</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="order : ${orderPage}">
+                            <td>
+                                <span class="order-id" th:text="${order.id}"></span>
+                            </td>
+                            <td>
+                                <span class="order-code" th:text="${order.code == null ? 'N/A' : order.code}"></span>
+                            </td>
+                            <td>
+                                <strong th:text="${order.reciever}"></strong>
+                            </td>
+                            <td th:text="${order.phoneNumber}"></td>
+                            <td th:text="${order.emailAddress}"></td>
+                            <td th:text="${#dates.format(order.createdAt, 'dd/MM/yyyy HH:mm')}"></td>
+                            <td>
+                                <span class="price-badge" th:text="${#numbers.formatDecimal(__${(order.totalPrice)}__, 0, 'POINT', 0, 'POINT')} + ' VND'"></span>
+                            </td>
+                            <td>
+                                <span class="status-badge" 
+                                      th:classappend="${order.status == 'PROCESSING'} ? 'status-processing' : 
+                                                      (order.status == 'PENDING') ? 'status-pending' : 
+                                                      (order.status == 'DELIVERING') ? 'status-delivering' : 
+                                                      (order.status == 'DELIVERED') ? 'status-delivered' : 'status-cancelled'"
+                                      th:text="${order.status}"></span>
+                            </td>
+                            <td th:text="${order.paymentMethod}"></td>
+                            <td>
+                                <a class="action-link" th:href="@{/admin/orders_management/details/__${order.id}__}">
+                                    <i class="fas fa-eye"></i> Chi tiết
+                                </a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                <div class="d-flex justify-content-center" th:if="${totalPages > 1}">
+                    <nav aria-label="Page navigation example" class="pagination-modern">
+                        <ul class="pagination mb-0">
+                            <li th:class="${pageNumber == currentPage+1 ? 'page-item active' : 'page-item'}"
+                                th:each="pageNumber : ${#numbers.sequence(1, totalPages)}">
+                                <a class="page-link"
+                                   th:href="@{/admin/orders_management(page=${pageNumber}, status=${selectedStatus})}" 
+                                   th:text="${pageNumber}"></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </main>
+        <div th:replace="admin/fragments/footer :: footer"></div>
+    </div>
+</div>
+<script crossorigin="anonymous" th:src="@{/js/admin/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/js/admin/scripts.js}"></script>
+<script th:src="@{/js/admin/Order.js}"></script>
+
+</body>
+
+</html>

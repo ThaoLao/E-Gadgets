@@ -1,0 +1,88 @@
+<div th:fragment="side_navbar" class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+        <i class="fas fa-cogs me-2"></i> <span>Admin</span>
+        <div class="sidebar-toggle-btn" id="sidebarToggle">
+<!--            <i class="fas fa-angle-double-left"></i>-->
+        </div>
+    </div>
+
+    <div class="sidebar-menu">
+        <div class="menu-section">
+            <div class="menu-title">Tổng quan</div>
+            <a th:href="@{/admin}" class="menu-item active">
+                <i class="fas fa-tachometer-alt"></i><span class="ms-2">Dashboard</span>
+            </a>
+        </div>
+
+        <div class="menu-section">
+            <div class="menu-title">Quản lý hệ thống</div>
+
+            <a th:href="@{/admin/users_management}" class="menu-item"><i class="fas fa-users"></i><span class="ms-2">Người dùng</span></a>
+<!--            <div class="submenu">-->
+<!--                <a th:href="@{/admin/users_management}">Danh sách người dùng</a>-->
+<!--            </div>-->
+
+            <a th:href="@{/admin/categories_management}" class="menu-item"><i class="fas fa-tags"></i><span class="ms-2">Danh mục</span></a>
+<!--            <div class="submenu">-->
+<!--                <a th:href="@{/admin/categories_management}">Danh sách danh mục</a>-->
+<!--            </div>-->
+
+            <a th:href="@{/admin/products_management}" class="menu-item"><i class="fas fa-box"></i><span class="ms-2">Sản phẩm</span></a>
+<!--            <div class="submenu">-->
+<!--                <a th:href="@{/admin/products_management}">Danh sách sản phẩm</a>-->
+<!--            </div>-->
+
+            <a th:href="@{/admin/promotions_management}" class="menu-item"><i class="fas fa-percent"></i><span class="ms-2">Khuyến mãi</span></a>
+<!--            <div class="submenu">-->
+<!--                <a th:href="@{/admin/promotions_management}">Danh sách khuyến mãi</a>-->
+<!--            </div>-->
+
+            <a th:href="@{/admin/orders_management}" class="menu-item"><i class="fas fa-shopping-cart"></i><span class="ms-2">Đơn hàng</span></a>
+<!--            <div class="submenu">-->
+<!--                <a th:href="@{/admin/orders_management}">Danh sách đơn hàng</a>-->
+<!--            </div>-->
+
+            <a th:href="@{/admin/contacts}" class="menu-item"><i class="fas fa-envelope"></i><span class="ms-2">Liên hệ</span></a>
+<!--            <div class="submenu">-->
+<!--                <a th:href="@{/admin/contacts}">Danh sách liên hệ</a>-->
+<!--            </div>-->
+
+            <a th:href="@{/admin/blogs_management}" class="menu-item"><i class="fas fa-blog"></i><span class="ms-2">Bài viết</span></a>
+<!--            <div class="submenu">-->
+<!--                <a th:href="@{/admin/blogs_management}">Danh sách bài viết</a>-->
+<!--            </div>-->
+        </div>
+    </div>
+
+    <div class="sidebar-footer">
+        <div>Đăng nhập bởi:</div>
+        <div class="email" th:text="${currentUser.email}"></div>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        const toggle = document.getElementById('sidebarToggle');
+        const body = document.body;
+        const sidebar = document.getElementById('sidebar');
+
+        toggle.addEventListener('click', function(e){
+            e.stopPropagation();
+            // toggle class trên body để các CSS phản ứng
+            body.classList.toggle('sidebar-collapsed');
+
+            // small screens: mở/đóng overlay
+            if(window.innerWidth <= 992){
+                sidebar.classList.toggle('active');
+            }
+        });
+
+        // optional: click ngoài sidebar trên mobile đóng menu
+        document.addEventListener('click', function(e){
+            if(window.innerWidth <= 992 && sidebar.classList.contains('active')){
+                if(!sidebar.contains(e.target) && !toggle.contains(e.target)){
+                    sidebar.classList.remove('active');
+                }
+            }
+        });
+    });
+</script>

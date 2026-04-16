@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no"
+          name="viewport"/>
+    <meta content="" name="description"/>
+    <meta content="" name="producer"/>
+    <title>Dashboard - SB Admin</title>
+    <link
+            rel="stylesheet"
+            th:href="@{/css/admin/style.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/admin/styles.css}"/>
+    <script crossorigin="anonymous"
+            th:src="@{/js/admin/fontawesome-all.js}"></script>
+    <style>
+        .modern-footer {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .footer-content {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        
+        .footer-links a {
+            color: #6c757d;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 6px;
+        }
+        
+        .footer-links a:hover {
+            color: #667eea;
+            background: rgba(102, 126, 234, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .footer-divider {
+            color: #dee2e6;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+
+<body class="sb-nav-fixed">
+<footer class="py-4 modern-footer mt-auto">
+    <div class="container-fluid px-4" th:fragment="footer">
+        <div class="d-flex align-items-center justify-content-between small footer-content">
+            <div>
+                <i class="fas fa-copyright me-1"></i>
+                Copyright &copy; GiaDungShop 2024. All rights reserved.
+            </div>
+            <div class="footer-links">
+                <a href="#">
+                    <i class="fas fa-shield-alt me-1"></i>Privacy Policy
+                </a>
+                <span class="footer-divider">&middot;</span>
+                <a href="#">
+                    <i class="fas fa-file-contract me-1"></i>Terms &amp; Conditions
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
