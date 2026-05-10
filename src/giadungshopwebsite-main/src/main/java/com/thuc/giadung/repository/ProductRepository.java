@@ -12,6 +12,8 @@ import java.util.List;
 
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
+    Page<Product> findByActiveFlag(boolean activeFlag, Pageable pageable);
+
     Page<Product> findByTitleContainingAndActiveFlag(String keyword, boolean activeFlag, Pageable pageable);
 
     Product findByTitleAndActiveFlag(String title, boolean activeFlag);

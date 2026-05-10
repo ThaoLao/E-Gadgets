@@ -20,6 +20,9 @@ public class SecurityConfig {
     @Autowired
     private UserDetailsService userDetailsService;
 
+    @Autowired
+    private LoginAuthenticationFailureHandler loginAuthenticationFailureHandler;
+
     @Bean
     public static PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
@@ -38,6 +41,7 @@ public class SecurityConfig {
                         form -> form
                                 .loginPage("/login")
                                 .loginProcessingUrl("/login")
+                                .failureHandler(loginAuthenticationFailureHandler)
                                 .defaultSuccessUrl("/")
                                 .permitAll()
                 ).logout(

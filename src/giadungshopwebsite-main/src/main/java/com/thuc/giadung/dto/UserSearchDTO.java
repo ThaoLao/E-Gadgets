@@ -16,6 +16,7 @@ public class UserSearchDTO {
     private String amountGap;
 
     public boolean isEmpty() {
-        return categoryId == null && (keyword == null || keyword.isEmpty()) && (sortBy == null || sortBy.isEmpty());
+        String k = keyword == null ? "" : keyword.trim();
+        return categoryId == null && k.isEmpty() && (sortBy == null || sortBy.isEmpty());
     }
 }

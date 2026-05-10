@@ -10,7 +10,7 @@
 
     <!-- Favicons -->
     <link rel="shortcut icon" th:href="@{/images/favicon.ico}">
-    <link rel=" apple-touch-icon" th:href="@{/images/icon.png}" }>
+    <link rel="apple-touch-icon" th:href="@{/images/icon.png}">
 
     <!-- Google font (font-family: 'Roboto', sans-serif; Poppins ; Satisfy) -->
     <link rel="stylesheet" th:href="@{/css/user/open_sans.css}">
@@ -48,6 +48,22 @@
     <style>
         .ft__logo a img {
             max-width: 20%;
+        }
+
+        .login-field-error {
+            display: none;
+            color: #dc3545;
+            font-size: 0.875rem;
+            margin-top: 0.35rem;
+            margin-bottom: 0;
+        }
+
+        .login-field-error.is-visible {
+            display: block;
+        }
+
+        .input__box input.input-error {
+            border-color: #dc3545;
         }
     </style>
 
@@ -112,21 +128,41 @@
                 <div class="col-lg-6 col-12">
                     <div class="my__account__wrapper">
                         <h3 class="account__title">Đăng nhập</h3>
-                        <div th:if="${param.error}">
+
+                        <!-- Lỗi server theo TestCase Đăng nhập (Excel) -->
+                        <div th:if="${param.error != null and param.error[0] == 'bad_credentials'}">
+                            <div class="alert alert-danger" role="alert">
+                                Email hoặc Mật khẩu không chính xác
+                            </div>
+                        </div>
+                        <div th:if="${param.error != null and param.error[0] == 'user_not_found'}">
+                            <div class="alert alert-danger" role="alert">
+                                Tài khoản không tồn tại
+                            </div>
+                        </div>
+                        <div th:if="${param.error != null and param.error[0] == 'required'}">
+                            <div class="alert alert-danger" role="alert">
+                                Vui lòng nhập Email và Mật khẩu
+                            </div>
+                        </div>
+                        <!-- Redirect cũ hoặc lỗi khác (không khớp mã testcase) -->
+                        <div th:if="${param.error != null and param.error[0] != 'bad_credentials' and param.error[0] != 'user_not_found' and param.error[0] != 'required'}">
                             <div class="alert alert-danger" role="alert">
                                 Đăng nhập thất bại
                             </div>
                         </div>
 
-                        <form method="post" th:action="@{/login}">
+                        <form method="post" novalidate onsubmit="return validateLoginForm()" th:action="@{/login}">
                             <div class="account__form">
                                 <div class="input__box">
                                     <label for="email">Email <span>*</span></label>
-                                    <input id="email" name="username" type="text"/>
+                                    <input id="email" name="username" type="text" autocomplete="username"/>
+                                    <p class="login-field-error" id="loginEmailError" role="alert"></p>
                                 </div>
                                 <div class="input__box">
                                     <label for="password">Mật khẩu<span>*</span></label>
-                                    <input id="password" name="password" type="password"/>
+                                    <input id="password" name="password" type="password" autocomplete="current-password"/>
+                                    <p class="login-field-error" id="loginPasswordError" role="alert"></p>
                                 </div>
                                 <div class="form__btn">
                                     <button type="submit">Đăng nhập</button>
@@ -146,6 +182,70 @@
     <!-- //Footer Area -->
 </div>
 <!-- //Main wrapper -->
+<script>
+    (function () {
+        var msgEmpty = 'Trường này không được để trống.';
+
+        function setFieldError(inputId, errorId, message) {
+            var input = document.getElementById(inputId);
+            var err = document.getElementById(errorId);
+            if (!err) return;
+            if (message) {
+                err.textContent = message;
+                err.classList.add('is-visible');
+                if (input) input.classList.add('input-error');
+            } else {
+                err.textContent = '';
+                err.classList.remove('is-visible');
+                if (input) input.classList.remove('input-error');
+            }
+        }
+
+        window.validateLoginForm = function () {
+            setFieldError('email', 'loginEmailError', null);
+            setFieldError('password', 'loginPasswordError', null);
+
+            var emailEl = document.getElementById('email');
+            var passEl = document.getElementById('password');
+            var email = emailEl ? emailEl.value.trim() : '';
+            var password = passEl ? passEl.value : '';
+
+            if (emailEl) emailEl.value = email;
+
+            if (!email && !password) {
+                setFieldError('email', 'loginEmailError', msgEmpty);
+                setFieldError('password', 'loginPasswordError', msgEmpty);
+                return false;
+            }
+            if (!email) {
+                setFieldError('email', 'loginEmailError', msgEmpty);
+                return false;
+            }
+            if (!password) {
+                setFieldError('password', 'loginPasswordError', msgEmpty);
+                return false;
+            }
+
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                setFieldError('email', 'loginEmailError', 'Email không đúng định dạng');
+                return false;
+            }
+            return true;
+        };
+
+        document.addEventListener('DOMContentLoaded', function () {
+            ['email', 'password'].forEach(function (id) {
+                var el = document.getElementById(id);
+                if (!el) return;
+                var errId = id === 'email' ? 'loginEmailError' : 'loginPasswordError';
+                el.addEventListener('input', function () {
+                    setFieldError(id, errId, null);
+                });
+            });
+        });
+    })();
+</script>
 <!-- JS Files -->
 <script th:src="@{/js/user/vendor/jquery-3.2.1.min.js}"></script>
 <script th:src="@{/js/user/popper.min.js}"></script>

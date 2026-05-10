@@ -496,15 +496,15 @@
     $('#slider-range').slider({
         range: true,
         min: 0,
-        max: 1000000,
-        values: [100000, 300000],
+        max: 10000000,
+        values: [100000, 10000000],
         step: 50000,
         slide: function (event, ui) {
             $('#amount').val(formatNumber(ui.values[0]) + ' VND - ' + formatNumber(ui.values[1]) + ' VND');
         }
     });
-    $('#amount').val($('#slider-range').slider('values', 0) +
-        ' VND - ' + $('#slider-range').slider('values', 1) + ' VND');
+    $('#amount').val(formatNumber($('#slider-range').slider('values', 0)) +
+        ' VND - ' + formatNumber($('#slider-range').slider('values', 1)) + ' VND');
 
 
     /*====== Dropdown ======*/

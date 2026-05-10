@@ -51,8 +51,7 @@ public class Product extends AbstractBase {
     @Column(name = "weight")
     private Integer weight;
 
-    @Lob
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "TEXT")
     private String description;
 
     @Column(name = "cover_image")

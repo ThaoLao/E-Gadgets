@@ -165,7 +165,7 @@
                             <label for="categoryName" class="form-label">
                                 <i class="fas fa-tag form-icon"></i>Tên danh mục:
                             </label>
-                            <input class="form-control" id="categoryName" placeholder="Nhập tên danh mục" required th:field="*{name}" type="text"/>
+                            <input class="form-control" id="categoryName" placeholder="Nhập tên danh mục" required minlength="2" maxlength="255" th:field="*{name}" type="text"/>
                         </div>
 
                         <!-- Description -->

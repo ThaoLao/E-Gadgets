@@ -138,19 +138,19 @@
                         <form th:action="@{/contact/submit}" th:method="post" th:object="${contact}">
                             <div class="mb-3">
                                 <label class="form-label" for="fullname">Họ tên</label>
-                                <input class="form-control" id="fullname" required th:field="*{name}" type="text">
+                                <input class="form-control" id="fullname" required maxlength="500" th:field="*{name}" type="text">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="email">Email</label>
-                                <input class="form-control" id="email" required th:field="*{email}" type="email">
+                                <input class="form-control" id="email" required maxlength="500" th:field="*{email}" type="email">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="title">Tiêu đề</label>
-                                <input class="form-control" id="title" required th:field="*{subject}" type="text">
+                                <input class="form-control" id="title" required maxlength="500" th:field="*{subject}" type="text">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="message">Nội dung</label>
-                                <textarea class="form-control" id="message" name="message" required
+                                <textarea class="form-control" id="message" name="message" required maxlength="500"
                                           rows="4" th:field="*{message}"></textarea>
                             </div>
                             <button class="btn btn-dark" type="submit">Gửi</button>

@@ -118,49 +118,85 @@ public class ProductServiceImpl implements ProductService {
     public Page<Product> searchProductsUser(UserSearchDTO search, Pageable pageable) {
         Long categoryId = search.getCategoryId();
         String keyword = search.getKeyword();
-        if (keyword == null) keyword = "";
+        if (keyword == null) {
+            keyword = "";
+        }
+        keyword = keyword.trim();
+        if (keyword.length() > 500) {
+            keyword = keyword.substring(0, 500);
+        }
+
         String sortBy = search.getSortBy();
-        String amountGap = search.getAmountGap();
-        String[] temp = amountGap.split(" ");
-        Double startAmount = Double.parseDouble(temp[0].replace(".", ""));
-        Double endAmount = Double.parseDouble(temp[3].replace(".", ""));
+        if (sortBy == null || sortBy.isBlank()) {
+            sortBy = SortType.newest;
+        }
 
+        double minAmount = 0;
+        double maxAmount = 1_000_000;
+        try {
+            double[] range = parseAmountGapRange(search.getAmountGap());
+            minAmount = range[0];
+            maxAmount = range[1];
+        } catch (Exception ignored) {
+        }
 
-        Page<Product> productsPage = productRepository.findAll(pageable);
         if (categoryId != null) {
-            if (sortBy.equals(SortType.oldest)) {
-                productsPage = productRepository.findByCategoryIdAndTitleContainingAndOriginalPriceBetweenAndActiveFlagOrderByCreatedAtAsc(categoryId, keyword, startAmount, endAmount, true, pageable);
-            } else if (sortBy.equals(SortType.newest)) {
-                productsPage = productRepository.findByCategoryIdAndTitleContainingAndOriginalPriceBetweenAndActiveFlagOrderByCreatedAtDesc(categoryId, keyword, startAmount, endAmount, true, pageable);
-
-            } else if (sortBy.equals(SortType.priceLowToHigh)) {
-                productsPage = productRepository.findByCategoryIdAndTitleContainingAndOriginalPriceBetweenAndActiveFlagOrderBySalePriceAsc(categoryId, keyword, startAmount, endAmount, true, pageable);
-
-            } else {
-                productsPage = productRepository.findByCategoryIdAndTitleContainingAndOriginalPriceBetweenAndActiveFlagOrderBySalePriceDesc(categoryId, keyword, startAmount, endAmount, true, pageable);
+            if (SortType.oldest.equals(sortBy)) {
+                return productRepository.findByCategoryIdAndTitleContainingAndOriginalPriceBetweenAndActiveFlagOrderByCreatedAtAsc(
+                        categoryId, keyword, minAmount, maxAmount, true, pageable);
             }
-        } else {
-            if (sortBy.equals(SortType.oldest)) {
-                productsPage = productRepository.findByTitleContainingAndOriginalPriceBetweenAndActiveFlagOrderByCreatedAtAsc(keyword, startAmount, endAmount, true, pageable);
-            } else if (sortBy.equals(SortType.newest)) {
-                productsPage = productRepository.findByTitleContainingAndOriginalPriceBetweenAndActiveFlagOrderByCreatedAtDesc(keyword, startAmount, endAmount, true, pageable);
-
-            } else if (sortBy.equals(SortType.priceLowToHigh)) {
-                productsPage = productRepository.findByTitleContainingAndOriginalPriceBetweenAndActiveFlagOrderBySalePriceAsc(keyword, startAmount, endAmount, true, pageable);
-
-            } else {
-                productsPage = productRepository.findByTitleContainingAndOriginalPriceBetweenAndActiveFlagOrderBySalePriceDesc(keyword, startAmount, endAmount, true, pageable);
+            if (SortType.newest.equals(sortBy)) {
+                return productRepository.findByCategoryIdAndTitleContainingAndOriginalPriceBetweenAndActiveFlagOrderByCreatedAtDesc(
+                        categoryId, keyword, minAmount, maxAmount, true, pageable);
             }
+            if (SortType.priceLowToHigh.equals(sortBy)) {
+                return productRepository.findByCategoryIdAndTitleContainingAndOriginalPriceBetweenAndActiveFlagOrderBySalePriceAsc(
+                        categoryId, keyword, minAmount, maxAmount, true, pageable);
+            }
+            return productRepository.findByCategoryIdAndTitleContainingAndOriginalPriceBetweenAndActiveFlagOrderBySalePriceDesc(
+                    categoryId, keyword, minAmount, maxAmount, true, pageable);
         }
-        if (sortBy == null) {
-            productsPage = productRepository.findByCategoryIdAndTitleContainingAndOriginalPriceBetweenAndActiveFlagOrderByCreatedAtDesc(categoryId, keyword, startAmount, endAmount, true, pageable);
+
+        if (SortType.oldest.equals(sortBy)) {
+            return productRepository.findByTitleContainingAndOriginalPriceBetweenAndActiveFlagOrderByCreatedAtAsc(
+                    keyword, minAmount, maxAmount, true, pageable);
         }
-        return productsPage;
+        if (SortType.newest.equals(sortBy)) {
+            return productRepository.findByTitleContainingAndOriginalPriceBetweenAndActiveFlagOrderByCreatedAtDesc(
+                    keyword, minAmount, maxAmount, true, pageable);
+        }
+        if (SortType.priceLowToHigh.equals(sortBy)) {
+            return productRepository.findByTitleContainingAndOriginalPriceBetweenAndActiveFlagOrderBySalePriceAsc(
+                    keyword, minAmount, maxAmount, true, pageable);
+        }
+        return productRepository.findByTitleContainingAndOriginalPriceBetweenAndActiveFlagOrderBySalePriceDesc(
+                keyword, minAmount, maxAmount, true, pageable);
+    }
+
+    private static double[] parseAmountGapRange(String amountGap) {
+        if (amountGap == null || amountGap.isBlank()) {
+            return new double[]{0, 1_000_000};
+        }
+        String[] parts = amountGap.split("\\s+-\\s+");
+        if (parts.length < 2) {
+            return new double[]{0, 1_000_000};
+        }
+        double a = parseVndNumber(parts[0]);
+        double b = parseVndNumber(parts[1]);
+        return new double[]{Math.min(a, b), Math.max(a, b)};
+    }
+
+    private static double parseVndNumber(String token) {
+        String digits = token.replaceAll("[^0-9]", "");
+        if (digits.isEmpty()) {
+            return 0;
+        }
+        return Double.parseDouble(digits);
     }
 
     @Override
     public Page<Product> getAllProductsForUsers(Pageable pageable) {
-        return productRepository.findAll(pageable);
+        return productRepository.findByActiveFlag(true, pageable);
     }
 
     @Override

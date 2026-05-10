@@ -20,8 +20,7 @@ public class Contact extends AbstractBase {
     @Column(name = "subject")
     private String subject;
 
-    @Lob
-    @Column(name = "message")
+    @Column(name = "message", columnDefinition = "TEXT")
     private String message;
 
 }

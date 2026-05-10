@@ -16,7 +16,7 @@ public class Category extends AbstractBase {
     @Column(name = "name")
     private String name;
 
-    @Lob
+    @Column(columnDefinition = "TEXT")
     private String description;
 
     @JsonIgnore

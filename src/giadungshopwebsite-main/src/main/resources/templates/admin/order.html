@@ -328,11 +328,12 @@
                                 <span class="price-badge" th:text="${#numbers.formatDecimal(__${(order.totalPrice)}__, 0, 'POINT', 0, 'POINT')} + ' VND'"></span>
                             </td>
                             <td>
-                                <span class="status-badge" 
-                                      th:classappend="${order.status == 'PROCESSING'} ? 'status-processing' : 
-                                                      (order.status == 'PENDING') ? 'status-pending' : 
-                                                      (order.status == 'DELIVERING') ? 'status-delivering' : 
-                                                      (order.status == 'DELIVERED') ? 'status-delivered' : 'status-cancelled'"
+                                <span class="status-badge"
+                                      th:classappend="${order.status == 'PROCESSING' ? 'status-processing' :
+                                                        order.status == 'PENDING' ? 'status-pending' :
+                                                        order.status == 'DELIVERING' ? 'status-delivering' :
+                                                        order.status == 'DELIVERED' ? 'status-delivered' :
+                                                        'status-cancelled'}"
                                       th:text="${order.status}"></span>
                             </td>
                             <td th:text="${order.paymentMethod}"></td>

@@ -175,6 +175,9 @@
                             </div>
                             <button class="btn-success submit" th:if="${totalCart > 0}" type="submit">đặt hàng
                             </button>
+                            <div class="alert alert-danger mt-3" th:if="${totalCart <= 0}">
+                                Hệ thống báo lỗi không có sản phẩm nào trong giỏ hàng
+                            </div>
                         </form>
                     </div>
 

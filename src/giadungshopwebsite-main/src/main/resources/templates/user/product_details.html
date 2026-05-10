@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
@@ -163,7 +163,7 @@
 
                                     <div class="product_meta">
 											<span class="posted_in">Danh mục:
-												<a th:href="@{/shop(page=${1}, sortBy=${'priceHighToLow'}, categoryId=${product.getCategory().getId()}, amountGap=${'0 VND - 1.000.000 VND'})}" th:text="${product.category.getName()}"></a>
+												<a th:href="@{/shop(page=${1}, sortBy=${'priceHighToLow'}, categoryId=${product.getCategory().getId()}, keyword=${''}, amountGap=${'0 VND - 1.000.000 VND'})}" th:text="${product.category.getName()}"></a>
 											</span>
                                     </div>
 
@@ -314,7 +314,7 @@
                 success: function (data) {
                     console.log(data);
                     if (data === "ok") {
-                        alert("Thêm sản phẩm vào giỏ thành công");
+                        alert("Thêm sản phẩm vào giỏ hàng thành công");
                         // Update cart quantity in the header
                         updateCartQuantity();
                     } else if (data === "error"){
