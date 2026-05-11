@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>Popup_Delete_Tittle</name>
+   <tag></tag>
+   <elementGuidId>ceebe7d1-fc17-4af3-b515-4eb40a199b67</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//h5[@id='deleteConfirmationModalLabel']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//h5[@id='deleteConfirmationModalLabel']</value>
+      <webElementGuid>20008f3f-966e-4bc4-8d1c-5dadb0f722ae</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

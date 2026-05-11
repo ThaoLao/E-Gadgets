@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>SC10_Checkout_COD</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>d61a691b-f946-4b0c-9ff4-8272ee3643fe</testCaseGuid>
+</TestCaseEntity>

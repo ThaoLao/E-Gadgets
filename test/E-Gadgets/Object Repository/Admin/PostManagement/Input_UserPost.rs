@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>Input_UserPost</name>
+   <tag></tag>
+   <elementGuidId>04caf38e-7119-4b2b-bfd1-6cd2c8b76480</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//select[@id='userId']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//select[@id='userId']</value>
+      <webElementGuid>6fe22761-7796-4b33-836f-4da6fbd6307a</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

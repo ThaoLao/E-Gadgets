@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>list_search_categories</name>
+   <tag></tag>
+   <elementGuidId>89b9bc04-04f4-4f19-93d7-affb3cc989be</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@type=&quot;radio&quot;]</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//*[@type=&quot;radio&quot;]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//*[@type=&quot;radio&quot;]</value>
+      <webElementGuid>069c650f-0263-4de6-a8dc-c8e8c3cfbefc</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

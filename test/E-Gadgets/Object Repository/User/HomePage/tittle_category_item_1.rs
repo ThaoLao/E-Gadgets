@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>tittle_category_item_1</name>
+   <tag></tag>
+   <elementGuidId>9feaa137-19b1-430c-beb3-45b04b5b7081</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@id=&quot;wrapper&quot;]/section[1]/div/div[2]/div[1]/div/div[19]/div/div/div[2]/h4</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//*[@id=&quot;wrapper&quot;]/section[1]/div/div[2]/div[1]/div/div[19]/div/div/div[2]/h4</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//*[@id=&quot;wrapper&quot;]/section[1]/div/div[2]/div[1]/div/div[19]/div/div/div[2]/h4</value>
+      <webElementGuid>872bce2d-f16d-4ff1-a4fe-7afa77756d07</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

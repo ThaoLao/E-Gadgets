@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>Form_originalPrice</name>
+   <tag></tag>
+   <elementGuidId>1d0f0319-5978-49ee-8cf4-a3b9ac91c88c</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//input[@id='originalPrice']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//input[@id='originalPrice']</value>
+      <webElementGuid>aaa8b6a5-7e2d-4e96-9c81-49bc53f4315b</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>register_phone_number</name>
+   <tag></tag>
+   <elementGuidId>c376842f-ccae-43ad-af84-9aa8b7cc534d</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//input[@id='phoneNumber']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//input[@id='phoneNumber']</value>
+      <webElementGuid>4cda6da4-416f-45d4-bc6b-21465bd079aa</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

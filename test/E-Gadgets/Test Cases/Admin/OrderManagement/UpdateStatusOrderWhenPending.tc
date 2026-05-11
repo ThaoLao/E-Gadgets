@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>UpdateStatusOrderWhenPending</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>882c68cc-ebc0-4f96-8180-d9c2fb3097cd</testCaseGuid>
+</TestCaseEntity>

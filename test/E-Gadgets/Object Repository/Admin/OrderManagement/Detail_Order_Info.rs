@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>Detail_Order_Info</name>
+   <tag></tag>
+   <elementGuidId>6addd697-e27c-4039-aac9-ff3323cd3732</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>(//p[@class='mb-1'])</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>(//p[@class='mb-1'])</value>
+      <webElementGuid>7317ea41-afea-430e-96ff-763e2860b43c</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

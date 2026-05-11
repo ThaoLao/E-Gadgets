@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>btn_auto_voice</name>
+   <tag></tag>
+   <elementGuidId>e05b6158-b848-428a-9b75-63060baa6127</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>/html[1]/body[1]/div[1]/section[1]/div[1]/div[2]/div[1]/div[1]/div[19]/div[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[3]/a[1]/i[1]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>/html[1]/body[1]/div[1]/section[1]/div[1]/div[2]/div[1]/div[1]/div[19]/div[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[3]/a[1]/i[1]</value>
+      <webElementGuid>1d1c5302-ccff-49db-afdc-93719559d43b</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

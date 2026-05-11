@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>SC06_Cart_RemoveProduct</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>f6e46012-eab4-4ae7-8e88-70f63338048a</testCaseGuid>
+</TestCaseEntity>

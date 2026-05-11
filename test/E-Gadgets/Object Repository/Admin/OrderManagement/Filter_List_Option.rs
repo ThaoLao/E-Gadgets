@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>Filter_List_Option</name>
+   <tag></tag>
+   <elementGuidId>8a79faf5-a527-4aa5-8c12-0e18de857902</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@id=&quot;layoutSidenav_content&quot;]/main/div/div/form/select/option</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//*[@id=&quot;layoutSidenav_content&quot;]/main/div/div/form/select/option</value>
+      <webElementGuid>8063ce02-04d0-4e43-a16d-c363bf0b5f6a</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

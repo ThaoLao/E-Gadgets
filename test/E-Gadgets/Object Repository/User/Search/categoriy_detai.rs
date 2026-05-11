@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>categoriy_detai</name>
+   <tag></tag>
+   <elementGuidId>3865193a-5b55-4fab-bb9a-2c6ffe531779</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//span[@class='posted_in']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//span[@class='posted_in']</value>
+      <webElementGuid>3cbe9d03-fa73-4a35-bf18-838d993492f7</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

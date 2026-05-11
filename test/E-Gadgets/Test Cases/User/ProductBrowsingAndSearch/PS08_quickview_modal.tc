@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Modal chi tiết sản phẩm (quick view)</description>
+   <name>PS08_quickview_modal</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>a1000001-0001-4001-8001-000000000008</testCaseGuid>
+</TestCaseEntity>

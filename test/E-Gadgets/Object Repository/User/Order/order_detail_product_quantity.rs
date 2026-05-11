@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>order_detail_product_quantity</name>
+   <tag></tag>
+   <elementGuidId>f0a48b1b-d44f-4bc4-ac42-8ef2990e4b62</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//span[@class='ml-1']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//span[@class='ml-1']</value>
+      <webElementGuid>1cfeb4f2-b100-4394-9f1e-424b87226276</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

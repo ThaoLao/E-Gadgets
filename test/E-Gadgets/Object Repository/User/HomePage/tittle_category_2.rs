@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>tittle_category_2</name>
+   <tag></tag>
+   <elementGuidId>05324867-c1d3-4d35-b4e1-ed919b902739</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>(//h2[@class='title__be--2'])[2]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>(//h2[@class='title__be--2'])[2]</value>
+      <webElementGuid>34c0e648-7790-4f32-8a19-cb7d39c2d177</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

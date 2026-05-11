@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>btn_forget_pass</name>
+   <tag></tag>
+   <elementGuidId>c96ab04c-c93b-45ae-9836-e856e7c7dae0</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//a[@class='forget_pass']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//a[@class='forget_pass']</value>
+      <webElementGuid>2f9d0f0e-3c1a-4e3c-b60a-5a2ab7dc2e13</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

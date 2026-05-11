@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>SC04_Cart_ChangeQty</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>7768ad25-558c-4505-831a-8b88d28b7a90</testCaseGuid>
+</TestCaseEntity>

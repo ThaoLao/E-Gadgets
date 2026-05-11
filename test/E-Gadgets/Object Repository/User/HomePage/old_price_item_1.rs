@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>old_price_item_1</name>
+   <tag></tag>
+   <elementGuidId>7d9ce9a8-b711-48e5-9af4-516e9d96b82b</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@id=&quot;wrapper&quot;]/section[1]/div/div[2]/div[1]/div/div[19]/div/div/div[2]/ul/li[2]</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//*[@id=&quot;wrapper&quot;]/section[1]/div/div[2]/div[1]/div/div[19]/div/div/div[2]/ul/li[2]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//*[@id=&quot;wrapper&quot;]/section[1]/div/div[2]/div[1]/div/div[19]/div/div/div[2]/ul/li[2]</value>
+      <webElementGuid>90e04f13-3480-4cba-9d7b-b5b2d49b4d5e</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

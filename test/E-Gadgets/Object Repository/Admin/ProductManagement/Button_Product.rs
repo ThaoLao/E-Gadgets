@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>Button_Product</name>
+   <tag></tag>
+   <elementGuidId>fbfa658b-cccc-4619-a7e4-db37e26bdece</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@id=&quot;sidenavAccordion&quot;]/div[1]/div/a[4]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//*[@id=&quot;sidenavAccordion&quot;]/div[1]/div/a[4]</value>
+      <webElementGuid>4946c3fe-6de0-44e9-b904-c6243ef61037</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>List_Product_Name</name>
+   <tag></tag>
+   <elementGuidId>6e72b0ae-0e8a-4f4f-8ede-c4ebb5c647ad</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@id=&quot;userlist&quot;]/tr/td[2]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//*[@id=&quot;userlist&quot;]/tr/td[2]</value>
+      <webElementGuid>ade48375-e78f-4503-b65d-699253c93f26</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

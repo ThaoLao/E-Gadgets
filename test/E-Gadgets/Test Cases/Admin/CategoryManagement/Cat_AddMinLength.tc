@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Cat_AddMinLength</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>f1321e44-05e6-4ec1-9d59-fcfdc405c9f3</testCaseGuid>
+</TestCaseEntity>

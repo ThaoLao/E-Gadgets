@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>SC09_Cart_TotalCalculation</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>5967d243-12ca-4e6d-801c-46fdb2c2e03a</testCaseGuid>
+</TestCaseEntity>

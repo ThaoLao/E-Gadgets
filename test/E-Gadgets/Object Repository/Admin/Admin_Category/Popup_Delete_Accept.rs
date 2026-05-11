@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>Popup_Delete_Accept</name>
+   <tag></tag>
+   <elementGuidId>89dbd3c1-230f-43a8-90b5-efbbe5f3ce89</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//a[@id='deleteButton']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//a[@id='deleteButton']</value>
+      <webElementGuid>84667bc7-f8ce-4d28-a7ac-d743a4df7285</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Đăng xuất: sau login có Đăng xuất trong setting__menu; bấm → về index; menu hiện Đăng nhập &amp; Đăng ký. header.html</description>
+   <name>LO05_logout_successfully</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>e7f8a9b0-c1d2-4344-a565-7890abcdef02</testCaseGuid>
+</TestCaseEntity>

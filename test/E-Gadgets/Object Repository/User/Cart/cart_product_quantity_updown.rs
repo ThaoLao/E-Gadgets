@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>cart_product_quantity_updown</name>
+   <tag></tag>
+   <elementGuidId>895f03d0-e63a-461f-b02c-51f0af291409</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//td[@class='product-quantity']//input[@type='number']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//*[@id=&quot;wrapper&quot;]/div[3]/div/div/div/div[1]/table/tbody/tr/td[4]/input</value>
+      <webElementGuid>2c9d7168-7e80-425e-828e-f7a72ad3212e</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

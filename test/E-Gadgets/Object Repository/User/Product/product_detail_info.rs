@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>product_detail_info</name>
+   <tag></tag>
+   <elementGuidId>bf71fb1a-531a-43b7-8a5d-f1a64aa74250</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@id=&quot;nav-details&quot;]/table/tbody/tr/td</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//*[@id=&quot;nav-details&quot;]/table/tbody/tr/td</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//*[@id=&quot;nav-details&quot;]/table/tbody/tr/td</value>
+      <webElementGuid>6a7eef99-d176-48e8-8328-d8301544a753</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

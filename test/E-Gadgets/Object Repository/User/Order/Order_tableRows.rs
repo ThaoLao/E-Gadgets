@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>Order_tableRows</name>
+   <tag></tag>
+   <elementGuidId>8dffb157-e5ea-4de4-8dd4-ce0c9eda7d51</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//tbody/tr</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//tbody/tr</value>
+      <webElementGuid>e9a5b3eb-8ce9-4326-b65b-8dd6651fa949</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

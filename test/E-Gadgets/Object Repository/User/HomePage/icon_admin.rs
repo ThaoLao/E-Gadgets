@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>icon_admin</name>
+   <tag></tag>
+   <elementGuidId>9faad05c-5574-4cfc-85dc-bf254387b852</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//a[normalize-space()='ADMIN']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//a[normalize-space()='ADMIN']</value>
+      <webElementGuid>1d7fdfff-ffed-4f5f-bb9a-d1886f51ab3a</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

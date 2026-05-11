@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>Paging_Last</name>
+   <tag></tag>
+   <elementGuidId>25ced1ab-ba9f-4d0e-9426-d07ca3215c05</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//a[normalize-space()='Last']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//a[normalize-space()='Last']</value>
+      <webElementGuid>144e1a0e-3cbc-41f3-bf4f-ea631a2af924</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

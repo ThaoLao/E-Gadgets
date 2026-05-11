@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>Form_productCategory</name>
+   <tag></tag>
+   <elementGuidId>092355d6-db77-4aac-9bdb-58aa80d033ad</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//select[@id='categoryId']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//select[@id='categoryId']</value>
+      <webElementGuid>0c1d7f15-95ec-4b90-8f4e-dbf92ccedee7</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

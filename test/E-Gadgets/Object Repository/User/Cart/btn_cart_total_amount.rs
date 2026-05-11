@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>btn_cart_total_amount</name>
+   <tag></tag>
+   <elementGuidId>7db97235-ed5c-4d94-8615-781a8347e56c</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//div[@class='cart__total__amount']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//div[@class='cart__total__amount']</value>
+      <webElementGuid>829cf13d-eb3a-4dd6-8a08-4e77f443c86d</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>msg_result_register</name>
+   <tag></tag>
+   <elementGuidId>b4f1da45-b60a-4472-8b40-bea56a766abf</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//div[contains(@class,'alert-success')]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//div[contains(@class,'alert-success')]</value>
+      <webElementGuid>eb242df5-2463-4fe4-9ecb-8b33c3d65ff2</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

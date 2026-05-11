@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>Tittle_In_Add_Product</name>
+   <tag></tag>
+   <elementGuidId>f588b6fa-2b9b-464b-b4a0-c23512515e97</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//input[@id='bookTitle']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//input[@id='bookTitle']</value>
+      <webElementGuid>0d60e876-6323-4541-909e-813763a184d3</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

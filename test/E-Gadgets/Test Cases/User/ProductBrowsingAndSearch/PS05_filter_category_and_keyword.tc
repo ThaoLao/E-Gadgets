@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Kết hợp danh mục + từ khóa — category_combo_label, keyword_combo</description>
+   <name>PS05_filter_category_and_keyword</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>a1000001-0001-4001-8001-000000000005</testCaseGuid>
+</TestCaseEntity>

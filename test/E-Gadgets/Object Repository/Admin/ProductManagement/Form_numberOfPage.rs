@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>Form_numberOfPage</name>
+   <tag></tag>
+   <elementGuidId>cbf55c49-1f67-4dc9-846a-e27993fb52b7</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//input[@id='numberOfPages']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//input[@id='numberOfPages']</value>
+      <webElementGuid>1f61f4d8-5d84-4f37-9687-5a6b1f210fb1</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

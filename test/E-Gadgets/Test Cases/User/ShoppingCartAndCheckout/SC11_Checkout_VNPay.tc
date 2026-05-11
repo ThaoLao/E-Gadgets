@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>SC11_Checkout_VNPay</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>85d827b7-f759-4bf9-b9d9-9581b1e58ff4</testCaseGuid>
+</TestCaseEntity>

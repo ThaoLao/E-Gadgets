@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>paging_last</name>
+   <tag></tag>
+   <elementGuidId>fcdd92bd-c5a2-4acd-ac76-3bca984e690f</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>(//a[@class='page-link'][contains(text(),'Trang')])[2]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>(//a[@class='page-link'][contains(text(),'Trang')])[2]</value>
+      <webElementGuid>3dbc08dc-afa2-415c-a75a-dc9cd64e04bf</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

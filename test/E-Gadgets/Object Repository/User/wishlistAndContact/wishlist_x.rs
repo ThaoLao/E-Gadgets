@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>wishlist_x</name>
+   <tag></tag>
+   <elementGuidId>2421d65d-8457-4156-b95e-fb8173ab57bb</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>(//button[contains(text(),'×')])</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>(//button[contains(text(),'×')])</value>
+      <webElementGuid>33aa6aa2-5953-4183-9f4b-16ae76313131</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>product_detail_price</name>
+   <tag></tag>
+   <elementGuidId>f1f37f84-1811-42c1-98b6-eb978c42a440</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@id=&quot;wrapper&quot;]/div[2]/div/div/div/div[1]/div/div[2]/div/h3</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//*[@id=&quot;wrapper&quot;]/div[2]/div/div/div/div[1]/div/div[2]/div/h3</value>
+      <webElementGuid>79b25708-dd53-45e3-b1ab-6f4ea1f53761</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>cart_product_price</name>
+   <tag></tag>
+   <elementGuidId>944c442b-8fe2-408e-bf12-a5465a6c55d6</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//td[@class='product-price']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//td[@class='product-price']</value>
+      <webElementGuid>1d8f9409-4b69-4544-bdcf-fcd5ffebb3ea</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

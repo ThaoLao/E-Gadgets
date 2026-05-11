@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>order_blank_code</name>
+   <tag></tag>
+   <elementGuidId>4e0e4745-f34d-4c69-83eb-6c9a9ee0df15</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//input[@id='bankCode']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//input[@id='bankCode']</value>
+      <webElementGuid>4cd4987f-b835-4d53-9289-c329d5fe9899</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

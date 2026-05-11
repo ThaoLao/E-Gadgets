@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>SC07_Cart_EmptyCheckout</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>137d87b9-8d1c-4f50-a630-7d7ef7bdc41c</testCaseGuid>
+</TestCaseEntity>

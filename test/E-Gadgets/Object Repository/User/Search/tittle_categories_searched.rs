@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>tittle_categories_searched</name>
+   <tag></tag>
+   <elementGuidId>2bcc2bab-2629-4663-9467-dc55a8400189</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@id=&quot;wrapper&quot;]/div[2]/div/div/div[2]/div[1]/div/div/h3</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//*[@id=&quot;wrapper&quot;]/div[2]/div/div/div[2]/div[1]/div/div/h3</value>
+      <webElementGuid>c8994c37-cadb-492e-81e2-521add0ca589</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>Detail_Order_Product</name>
+   <tag></tag>
+   <elementGuidId>445d7c73-6af3-40e9-9afc-ebd71d0b5e12</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//tbody//tr</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//tbody//tr</value>
+      <webElementGuid>8c92fe96-8f3b-445d-be4a-279643d5e57b</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

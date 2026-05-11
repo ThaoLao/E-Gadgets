@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>register_re_password</name>
+   <tag></tag>
+   <elementGuidId>f377af1f-6c7f-4eac-bcb4-a61055bc4f14</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//input[@id='confirmPassword']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//input[@id='confirmPassword']</value>
+      <webElementGuid>3effb9ae-97c9-46fb-8abd-3155289bf150</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

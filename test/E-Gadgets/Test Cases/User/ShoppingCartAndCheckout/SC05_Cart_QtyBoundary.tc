@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>SC05_Cart_QtyBoundary</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>8e002ea4-d034-46e9-9f21-58dee7309de7</testCaseGuid>
+</TestCaseEntity>

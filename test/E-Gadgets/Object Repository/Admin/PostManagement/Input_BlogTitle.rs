@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>Input_BlogTitle</name>
+   <tag></tag>
+   <elementGuidId>0836a061-5b6f-43ed-bbf4-dbd3433e4184</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//input[@id='blogTitle']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//input[@id='blogTitle']</value>
+      <webElementGuid>1537c2fb-63d3-4fad-8c30-1b2a54a4bf35</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>Form_Quantity</name>
+   <tag></tag>
+   <elementGuidId>9f44fc03-29fa-4de1-b281-c17fe97d255b</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//input[@id='quantity']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//input[@id='quantity']</value>
+      <webElementGuid>f3a30f3f-be3a-4dd2-b2d5-5fac71cc9f0d</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

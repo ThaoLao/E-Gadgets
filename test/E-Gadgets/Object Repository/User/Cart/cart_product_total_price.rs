@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>cart_product_total_price</name>
+   <tag></tag>
+   <elementGuidId>696e1b5b-1724-4cbd-a8e2-0743112cb498</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//td[@class='product-subtotal']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//td[@class='product-subtotal']</value>
+      <webElementGuid>84cd69bc-03dd-4b93-8da8-da8d616ee2da</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

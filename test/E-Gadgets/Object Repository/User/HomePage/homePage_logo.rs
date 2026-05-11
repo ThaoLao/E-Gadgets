@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>homePage_logo</name>
+   <tag></tag>
+   <elementGuidId>c6848004-1d24-4168-8324-79ea9a115a50</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@id=&quot;wn__header&quot;]/div/div/div[1]/div/a/img</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//*[@id=&quot;wn__header&quot;]/div/div/div[1]/div/a/img</value>
+      <webElementGuid>0062be79-8f81-42ac-86c1-718f0fb9221d</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

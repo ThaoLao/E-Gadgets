@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Không có kết quả — keyword_no_result, thông báo + trạng thái 0/0</description>
+   <name>PS03_search_no_results</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>a1000001-0001-4001-8001-000000000003</testCaseGuid>
+</TestCaseEntity>

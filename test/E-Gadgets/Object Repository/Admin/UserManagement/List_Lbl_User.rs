@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>List_Lbl_User</name>
+   <tag></tag>
+   <elementGuidId>815d550f-7731-4168-af29-b1be82eb8320</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>(//a[@type='button'][normalize-space()='user'])</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>(//a[@type='button'][normalize-space()='user'])</value>
+      <webElementGuid>7be65e62-d98b-46de-896b-d142562ed2b8</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

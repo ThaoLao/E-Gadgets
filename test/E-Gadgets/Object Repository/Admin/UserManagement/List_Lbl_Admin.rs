@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>List_Lbl_Admin</name>
+   <tag></tag>
+   <elementGuidId>08fcb717-1d74-4f31-85dd-08c55569f291</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>(//a[normalize-space()='ADMIN'])</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>(//a[normalize-space()='ADMIN'])</value>
+      <webElementGuid>a0b534d6-c8b7-447f-aef1-17ee4bf68d81</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

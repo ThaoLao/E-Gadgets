@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>List_Category_Option</name>
+   <tag></tag>
+   <elementGuidId>0ecf0033-7bc1-4e45-a6bb-f3524d847144</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@id=&quot;categoryId&quot;]/option</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//*[@id=&quot;categoryId&quot;]/option</value>
+      <webElementGuid>e5f699d4-c7ea-4bc0-92f7-7e03a5b1a5d7</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

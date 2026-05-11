@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Phân trang — trang 2 (nếu có), Đầu, Cuối</description>
+   <name>PS09_pagination_nav</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>a1000001-0001-4001-8001-000000000009</testCaseGuid>
+</TestCaseEntity>

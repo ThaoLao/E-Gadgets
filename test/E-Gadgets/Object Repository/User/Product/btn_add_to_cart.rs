@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>btn_add_to_cart</name>
+   <tag></tag>
+   <elementGuidId>603df07d-92a6-4a04-a7b1-cc2d8d214854</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//a[@class='cart'][contains(@onclick,'addToCart')]</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//button[@class='tocart']&#xd;
+</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>/html[1]/body[1]/div[1]/section[1]/div[1]/div[2]/div[1]/div[1]/div[20]/div[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[2]/a[1]</value>
+      <webElementGuid>3b452564-d509-4c25-bf34-285555d40d65</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

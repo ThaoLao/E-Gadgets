@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>cart_product_quantity</name>
+   <tag></tag>
+   <elementGuidId>e0ea57c3-24ce-4f9a-b5ad-b073357afb0b</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//td[@class='product-quantity']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//td[@class='product-quantity']</value>
+      <webElementGuid>39eab70c-118a-4d4a-a4c1-4f036d96398a</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

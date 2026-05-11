@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>Form_PublishedDate</name>
+   <tag></tag>
+   <elementGuidId>4dc7d9fb-9a60-4552-b6e1-5fbd1219d999</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//input[@id='publishedDate']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//input[@id='publishedDate']</value>
+      <webElementGuid>c51f46d2-062f-42fe-994b-e6f1fdcc9069</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

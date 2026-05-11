@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Lọc theo danh mục — category_label</description>
+   <name>PS04_filter_by_category</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>a1000001-0001-4001-8001-000000000004</testCaseGuid>
+</TestCaseEntity>

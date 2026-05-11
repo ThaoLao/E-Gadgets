@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>List_Button_Delete</name>
+   <tag></tag>
+   <elementGuidId>94982c22-da80-4d21-b7b8-b9b4648cd5e9</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>(//button[@data-toggle='modal'][normalize-space()='Xóa'])</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>(//button[@data-toggle='modal'][normalize-space()='Xóa'])</value>
+      <webElementGuid>11c7e742-3b48-4d7d-958e-172311f3ecbb</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

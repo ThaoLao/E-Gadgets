@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Thêm giỏ sau khi đăng nhập — Login_Success; ghi last_cart_add_ok_at (Tim_Kiem)</description>
+   <name>PS10_add_to_cart_logged_in</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>a1000001-0001-4001-8001-000000000010</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>Popup_btn_update</name>
+   <tag></tag>
+   <elementGuidId>6a44859e-dfdb-47bc-97dc-fc6b778dcd51</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//a[@id='deleteButton']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//a[@id='deleteButton']</value>
+      <webElementGuid>ef93bfc9-e8d9-4024-83e6-461f5e0e2c31</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

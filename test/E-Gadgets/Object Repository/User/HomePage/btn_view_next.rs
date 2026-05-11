@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>btn_view_next</name>
+   <tag></tag>
+   <elementGuidId>3bc94fef-5c63-46b0-a3ed-64d9b5a25c14</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//body[1]/div[1]/section[1]/div[1]/div[2]/div[2]/div[2]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//body[1]/div[1]/section[1]/div[1]/div[2]/div[2]/div[2]</value>
+      <webElementGuid>542ef025-1dd1-44a3-a4f2-a7658d506990</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

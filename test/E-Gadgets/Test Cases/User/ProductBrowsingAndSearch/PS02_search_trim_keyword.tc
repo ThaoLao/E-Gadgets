@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Trim khoảng trắng từ khóa — keyword_trim_input</description>
+   <name>PS02_search_trim_keyword</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>a1000001-0001-4001-8001-000000000002</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Tìm kiếm theo từ khóa — sheet Tim_Kiem (keyword_match). Ghi last_search_ok_at.</description>
+   <name>PS01_search_by_keyword</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>a1000001-0001-4001-8001-000000000001</testCaseGuid>
+</TestCaseEntity>

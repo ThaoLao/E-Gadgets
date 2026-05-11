@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>UpdateStatusOrderWhenProcessing</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>c47cf6dc-aaea-427a-ad6e-1d51c336bcfb</testCaseGuid>
+</TestCaseEntity>
