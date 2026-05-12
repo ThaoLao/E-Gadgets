@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//button[contains(text(),'Xác nhận')]</value>
+         <value>//button[@type='submit' and contains(., 'Lưu bài viết')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -18,7 +18,8 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//button[contains(text(),'Xác nhận')]</value>
+      <value>//button[@type='submit' and contains(., 'Lưu bài viết')]</value>
       <webElementGuid>3ae71020-c2d7-4901-9ecf-f3fef42349ce</webElementGuid>
    </webElementProperties>
 </WebElementEntity>
+

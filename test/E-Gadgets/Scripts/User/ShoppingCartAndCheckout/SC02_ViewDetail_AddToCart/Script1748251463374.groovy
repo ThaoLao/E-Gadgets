@@ -17,13 +17,13 @@ TestObject makeTO(String xpath) {
 new openLoginPage().navigateToLogin()
 WebUI.setText(makeTO("//input[@id='email']"), GlobalVariable.User_Email)
 WebUI.setText(makeTO("//input[@id='password']"), GlobalVariable.General_Password)
-WebUI.click(makeTO("//button[contains(text(),'Đăng nhập')]"))
+WebUI.click(makeTO("//button[contains(normalize-space(.),'Đăng nhập')]"))
 
 new openShopPage().navigateToShop()
 
 String initCount = WebUI.getText(makeTO("//span[@id='cart-quantity']"))
 WebUI.click(makeTO("(//div[contains(@class,'product__thumb')]/a)[1]"))
-WebUI.click(makeTO("//button[contains(text(),'Thêm vào giỏ hàng')]"))
+WebUI.click(makeTO("//button[contains(normalize-space(.),'Thêm vào giỏ hàng')]"))
 WebUI.waitForAlert(5)
 String alertText = WebUI.getAlertText()
 WebUI.verifyEqual(alertText.contains('Thêm sản phẩm vào giỏ hàng thành công'), true)

@@ -30,7 +30,7 @@ WebUI.setText(makeTO("//input[@id='fullName']"), "Test Delete User")
 WebUI.setText(makeTO("//input[@id='phoneNumber']"), "0123456789")
 WebUI.setText(makeTO("//input[@id='address']"), "Test Address")
 WebUI.setText(makeTO("//input[@id='password']"), GlobalVariable.General_Password)
-WebUI.click(makeTO("//button[contains(text(),'Đăng ký')]"))
+WebUI.click(makeTO("//button[contains(normalize-space(.),'Đăng ký')]"))
 WebUI.delay(2)
 
 // Now login as admin
@@ -38,7 +38,7 @@ WebUI.navigateToUrl(GlobalVariable.URL + '/login')
 WebUI.delay(1)
 WebUI.setText(makeTO("//input[@id='email']"), GlobalVariable.Admin_Email)
 WebUI.setText(makeTO("//input[@id='password']"), GlobalVariable.General_Password)
-WebUI.click(makeTO("//button[contains(text(),'Đăng nhập')]"))
+WebUI.click(makeTO("//button[contains(normalize-space(.),'Đăng nhập')]"))
 WebUI.delay(2)
 WebUI.click(findTestObject('Object Repository/User/HomePage/icon_Accounts'))
 WebUI.verifyElementVisible(findTestObject('Object Repository/User/HomePage/icon_admin'))
@@ -52,9 +52,9 @@ WebUI.delay(3)
 
 // Find the test user and delete
 String rowsBefore = WebUI.executeJavaScript("return document.querySelectorAll('tbody tr').length.toString()", null)
-boolean hasDeleteBtn = WebUI.verifyElementPresent(makeTO("(//button[contains(text(),'Xóa')])[last()]"), 3, FailureHandling.OPTIONAL)
+boolean hasDeleteBtn = WebUI.verifyElementPresent(makeTO("(//tbody/tr)[last()]//button[contains(@class,'btn-danger-modern') and contains(.,'Xóa')]"), 3, FailureHandling.OPTIONAL)
 if (hasDeleteBtn) {
-    WebUI.click(makeTO("(//button[contains(text(),'Xóa')])[last()]"))
+    WebUI.click(makeTO("(//tbody/tr)[last()]//button[contains(@class,'btn-danger-modern') and contains(.,'Xóa')]"))
     WebUI.delay(1)
     WebUI.acceptAlert()
     WebUI.delay(3)
@@ -63,3 +63,4 @@ SessionHelper.endLoggedInSessionCleanly()
 try {
     util.updateExcelTestResult('e:/Support_DoAn/LaoThanhThao/Source/TestCase_DoAn_LaoThanhThao.xlsx', 'Quản lý người dùng', 'Xác nhận xóa thành công', 'Pass', 'Pass')
 } catch (Exception e) {}
+

@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//th[contains(text(),'Số trang')]</value>
+         <value>//th[contains(normalize-space(.),'Số trang')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -18,7 +18,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//th[contains(text(),'Số trang')]</value>
+      <value>//th[contains(normalize-space(.),'Số trang')]</value>
       <webElementGuid>898dc072-2e45-462d-b8eb-e8a5b2162bd0</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

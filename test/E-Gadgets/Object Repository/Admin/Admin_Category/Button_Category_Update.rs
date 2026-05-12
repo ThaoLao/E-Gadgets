@@ -10,10 +10,11 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//a[@class='btn btn-primary btn-sm' and contains(normalize-space(), 'Cập nhật')]</value>
+         <value>//a[contains(@class, 'btn-primary-modern') and contains(., 'Sửa')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
    <smartLocatorEnabled>false</smartLocatorEnabled>
    <useRalativeImagePath>false</useRalativeImagePath>
 </WebElementEntity>
+

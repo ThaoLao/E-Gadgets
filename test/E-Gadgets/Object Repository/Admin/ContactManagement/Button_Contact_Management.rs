@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//a[contains(text(),'Danh Sách Liên Hệ')]</value>
+         <value>//a[contains(normalize-space(.),'Danh Sách Liên Hệ')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -18,7 +18,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//a[contains(text(),'Danh Sách Liên Hệ')]</value>
+      <value>//a[contains(normalize-space(.),'Danh Sách Liên Hệ')]</value>
       <webElementGuid>ebdb388b-3122-46a0-9219-d41ec7b89258</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

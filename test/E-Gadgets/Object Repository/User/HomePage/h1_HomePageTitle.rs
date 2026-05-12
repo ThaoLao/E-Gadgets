@@ -10,7 +10,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//h1[text()='Trang Chủ']</value>
+         <value>//h1[normalize-space(.)='Trang Chủ']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>(//a[@class='page-link'][contains(text(),'Trang')])[2]</value>
+         <value>//a[contains(., 'Trang cuối')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -18,7 +18,8 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>(//a[@class='page-link'][contains(text(),'Trang')])[2]</value>
+      <value>//a[contains(., 'Trang cuối')]</value>
       <webElementGuid>3dbc08dc-afa2-415c-a75a-dc9cd64e04bf</webElementGuid>
    </webElementProperties>
 </WebElementEntity>
+

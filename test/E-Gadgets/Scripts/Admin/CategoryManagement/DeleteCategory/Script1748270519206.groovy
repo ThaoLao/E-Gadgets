@@ -31,19 +31,19 @@ WebUI.click(findTestObject('Object Repository/Admin/Admin_Category/Button_Catego
 WebUI.delay(3)
 
 // Go to last page first to delete test data
-WebUI.click(makeTO("//a[contains(text(),'Trang cuối')]"))
+WebUI.click(makeTO("//a[contains(normalize-space(.),'Trang cuối')]"))
 WebUI.delay(2)
 
 // Count rows before
 String rowsBefore = WebUI.executeJavaScript("return document.querySelectorAll('tbody tr').length.toString()", null)
 
 // Click delete button on last row
-WebUI.click(makeTO("(//button[contains(@class,'btn-delete')])[last()]"))
-WebUI.delay(1)
+WebUI.click(makeTO("(//tbody/tr)[last()]//button[contains(@class,'btn-delete')]"))
+WebUI.waitForElementVisible(makeTO("//div[@id='deleteConfirmationModal']"), 5)
 
 // First test: Cancel
-WebUI.verifyElementVisible(makeTO("//div[@id='deleteConfirmationModal']//button[contains(text(),'Hủy')]"))
-WebUI.click(makeTO("//div[@id='deleteConfirmationModal']//button[contains(text(),'Hủy')]"))
+WebUI.verifyElementVisible(makeTO("//button[contains(normalize-space(.),'Hủy')]"))
+WebUI.click(makeTO("//button[contains(normalize-space(.),'Hủy')]"))
 WebUI.delay(1)
 
 // Verify row still exists
@@ -56,9 +56,9 @@ try {
 
 
 // Now actually delete
-WebUI.click(makeTO("(//button[contains(@class,'btn-delete')])[last()]"))
-WebUI.delay(1)
-WebUI.click(makeTO("//a[@id='deleteButton']"))
+WebUI.click(makeTO("(//tbody/tr)[last()]//button[contains(@class,'btn-delete')]"))
+WebUI.waitForElementVisible(makeTO("//div[@id='deleteConfirmationModal']"), 5)
+WebUI.click(makeTO("//div[@id='deleteConfirmationModal']//a[@id='deleteButton']"))
 WebUI.delay(3)
 
 SessionHelper.endLoggedInSessionCleanly()
@@ -66,3 +66,5 @@ SessionHelper.endLoggedInSessionCleanly()
 try {
     util.updateExcelTestResult('e:/Support_DoAn/LaoThanhThao/Source/TestCase_DoAn_LaoThanhThao.xlsx', 'Quản lý danh mục', 'Xác nhận xóa (Đồng ý)', 'Pass', 'Pass')
 } catch (Exception e) {}
+
+

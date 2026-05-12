@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC02_ClickShopNow</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>b68cb6e8-ac11-4b26-94da-37a5cc7d7c0a</testCaseGuid>
+</TestCaseEntity>

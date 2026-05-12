@@ -23,17 +23,19 @@ WebUI.click(findTestObject('Object Repository/User/HomePage/icon_Accounts'))
 WebUI.verifyElementVisible(findTestObject('Object Repository/User/HomePage/icon_admin'))
 WebUI.click(findTestObject('Object Repository/User/HomePage/icon_admin'))
 WebUI.delay(2)
-WebUI.click(makeTO("//a[contains(@class,'nav-link') and contains(.,'Sản phẩm')]"))
+WebUI.click(makeTO("//a[contains(@href, '/admin/products_management')]"))
 WebUI.delay(1)
 WebUI.click(makeTO("//a[contains(@href,'/admin/products_management')]"))
 WebUI.delay(3)
 
-WebUI.click(makeTO("(//a[contains(text(),'Sửa')])[1]"))
+WebUI.click(makeTO("(//tbody/tr)[1]//a[contains(@class,'btn-primary-modern') and contains(.,'Sửa')]"))
 WebUI.delay(2)
 // Verify old data is pre-filled
-String title = WebUI.getAttribute(makeTO("//input[@id='title']"), 'value')
+String title = WebUI.getAttribute(makeTO("//input[@id='productTitle']"), 'value')
 WebUI.verifyNotEqual(title, "")
 SessionHelper.endLoggedInSessionCleanly()
 try {
     util.updateExcelTestResult('e:/Support_DoAn/LaoThanhThao/Source/TestCase_DoAn_LaoThanhThao.xlsx', 'Quản lý sản phẩm', 'Hiển thị dữ liệu cũ', 'Pass', 'Pass')
 } catch (Exception e) {}
+
+

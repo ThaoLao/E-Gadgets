@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//h2[contains(text(),'Thêm - Cập nhật Danh Mục')]</value>
+         <value>//h2[contains(normalize-space(.),'Thêm - Cập nhật Danh Mục')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -18,7 +18,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//h2[contains(text(),'Thêm - Cập nhật Danh Mục')]</value>
+      <value>//h2[contains(normalize-space(.),'Thêm - Cập nhật Danh Mục')]</value>
       <webElementGuid>08e99209-ebea-43d4-86d0-982cb27b8a13</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

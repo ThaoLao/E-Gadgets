@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//a[contains(text(),'i danh sách')]</value>
+         <value>//a[contains(@class, 'btn-secondary') and contains(., 'Quay l')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -18,7 +18,8 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//a[contains(text(),'i danh sách')]</value>
+      <value>//a[contains(@class, 'btn-secondary') and contains(., 'Quay l')]</value>
       <webElementGuid>3671d223-f5b5-487c-ba21-a567bd5d254c</webElementGuid>
    </webElementProperties>
 </WebElementEntity>
+

@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//table[@class='table table-striped table-hover table-bordered mt-4']</value>
+         <value>//table[contains(@class, 'table')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -18,7 +18,8 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//table[@class='table table-striped table-hover table-bordered mt-4']</value>
+      <value>//table[contains(@class, 'table')]</value>
       <webElementGuid>941f57b5-18d0-4ca3-97ab-4cfea4fee075</webElementGuid>
    </webElementProperties>
 </WebElementEntity>
+

@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//h1[contains(text(),'Danh Sách Đơn Hàng')]</value>
+         <value>//h1[contains(., 'Quản lý đơn hàng')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -18,7 +18,8 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//h1[contains(text(),'Danh Sách Đơn Hàng')]</value>
+      <value>//h1[contains(., 'Quản lý đơn hàng')]</value>
       <webElementGuid>955b5737-ad64-4fdb-85e3-d8d1b63debdc</webElementGuid>
    </webElementProperties>
 </WebElementEntity>
+

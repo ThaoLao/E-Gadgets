@@ -51,8 +51,10 @@ import utils.*
 		WebUI.executeJavaScript("arguments[0].click();", Arrays.asList(deleteBtns[0]))
 	
 		// Xác nhận alert
-		WebUI.waitForAlert(3)
-		WebUI.acceptAlert()
+		TestObject modal = new TestObject().addProperty('xpath', com.kms.katalon.core.testobject.ConditionType.EQUALS, "//div[@id='deleteConfirmationModal']")
+		TestObject deleteConfirmBtn = new TestObject().addProperty('xpath', com.kms.katalon.core.testobject.ConditionType.EQUALS, "//div[@id='deleteConfirmationModal']//a[@id='deleteButton']")
+		WebUI.waitForElementVisible(modal, 5)
+		WebUI.click(deleteConfirmBtn)
 	
 		WebUI.delay(2)
 	
@@ -80,3 +82,4 @@ import utils.*
 	}
 	
 	SessionHelper.endLoggedInSessionCleanly()
+

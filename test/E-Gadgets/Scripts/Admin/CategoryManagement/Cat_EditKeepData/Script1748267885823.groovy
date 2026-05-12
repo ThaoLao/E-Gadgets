@@ -30,7 +30,7 @@ WebUI.waitForElementClickable(findTestObject('Object Repository/Admin/Admin_Cate
 WebUI.click(findTestObject('Object Repository/Admin/Admin_Category/Button_Category_List'))
 WebUI.delay(3)
 
-WebUI.click(makeTO("(//a[contains(text(),'Sửa')])[1]"))
+WebUI.click(makeTO("(//tbody/tr)[1]//a[contains(@class,'btn-primary-modern') and contains(.,'Sửa')]"))
 WebUI.delay(2)
 // Don't change anything, just save
 WebUI.click(findTestObject('Object Repository/Admin/Admin_Category/Button_Category_Add_Submit'))
@@ -42,3 +42,4 @@ SessionHelper.endLoggedInSessionCleanly()
 try {
     util.updateExcelTestResult('e:/Support_DoAn/LaoThanhThao/Source/TestCase_DoAn_LaoThanhThao.xlsx', 'Quản lý danh mục', 'Giữ nguyên dữ liệu', 'Pass', 'Pass')
 } catch (Exception e) {}
+

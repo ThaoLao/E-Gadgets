@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//button[contains(text(),'Đăng nhập')]</value>
+         <value>//button[contains(normalize-space(.),'Đăng nhập')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -18,7 +18,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//button[contains(text(),'Đăng nhập')]</value>
+      <value>//button[contains(normalize-space(.),'Đăng nhập')]</value>
       <webElementGuid>4794e72f-69d0-4085-a808-2cb031936e0e</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

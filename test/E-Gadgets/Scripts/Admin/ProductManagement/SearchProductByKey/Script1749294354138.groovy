@@ -24,14 +24,14 @@ WebUI.click(findTestObject('Object Repository/User/HomePage/icon_Accounts'))
 WebUI.verifyElementVisible(findTestObject('Object Repository/User/HomePage/icon_admin'))
 WebUI.click(findTestObject('Object Repository/User/HomePage/icon_admin'))
 WebUI.delay(2)
-WebUI.click(makeTO("//a[contains(@class,'nav-link') and contains(.,'Sản phẩm')]"))
+WebUI.click(makeTO("//a[contains(@href, '/admin/products_management')]"))
 WebUI.delay(1)
 WebUI.click(makeTO("//a[contains(@href,'/admin/products_management')]"))
 WebUI.delay(3)
 
 // Search with existing keyword
 WebUI.setText(makeTO("//input[@id='keyword']"), "sấy")
-WebUI.click(makeTO("//button[contains(text(),'Tìm kiếm')]"))
+WebUI.click(makeTO("//button[contains(normalize-space(.),'Tìm kiếm')]"))
 WebUI.delay(3)
 WebUI.verifyElementPresent(makeTO("//tbody/tr"), 5, FailureHandling.OPTIONAL)
 
@@ -44,7 +44,7 @@ try {
 WebUI.navigateToUrl(GlobalVariable.URL + '/admin/products_management')
 WebUI.delay(2)
 WebUI.setText(makeTO("//input[@id='keyword']"), "the ministry")
-WebUI.click(makeTO("//button[contains(text(),'Tìm kiếm')]"))
+WebUI.click(makeTO("//button[contains(normalize-space(.),'Tìm kiếm')]"))
 WebUI.delay(3)
 String rowCount = WebUI.executeJavaScript("return document.querySelectorAll('tbody tr').length.toString()", null)
 WebUI.verifyEqual(rowCount, "0")
@@ -54,3 +54,4 @@ SessionHelper.endLoggedInSessionCleanly()
 try {
     util.updateExcelTestResult('e:/Support_DoAn/LaoThanhThao/Source/TestCase_DoAn_LaoThanhThao.xlsx', 'Quản lý sản phẩm', 'Theo từ khóa (Không kết quả)', 'Pass', 'Pass')
 } catch (Exception e) {}
+

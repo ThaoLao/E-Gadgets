@@ -16,11 +16,11 @@ TestObject makeTO(String xpath) {
 new openLoginPage().navigateToLogin()
 WebUI.setText(makeTO("//input[@id='email']"), GlobalVariable.User_Email)
 WebUI.setText(makeTO("//input[@id='password']"), GlobalVariable.General_Password)
-WebUI.click(makeTO("//button[contains(text(),'Đăng nhập')]"))
+WebUI.click(makeTO("//button[contains(normalize-space(.),'Đăng nhập')]"))
 
 WebUI.navigateToUrl(GlobalVariable.URL + '/shop')
 WebUI.click(makeTO("(//div[contains(@class,'product__thumb')]/a)[1]"))
-WebUI.click(makeTO("//button[contains(text(),'Thêm vào giỏ hàng')]"))
+WebUI.click(makeTO("//button[contains(normalize-space(.),'Thêm vào giỏ hàng')]"))
 WebUI.waitForAlert(5)
 WebUI.acceptAlert()
 
@@ -39,7 +39,7 @@ WebUI.setText(makeTO("//input[@id='bankCode']"), 'NCB')
 WebUI.clearText(makeTO("//textarea[@id='address']"))
 WebUI.setText(makeTO("//textarea[@id='address']"), '123 VNPay Street')
 
-WebUI.click(makeTO("//button[contains(text(),'Đặt hàng')]"))
+WebUI.click(makeTO("//button[contains(normalize-space(.),'Đặt hàng')]"))
 
 // Verify it redirects to VNPay URL by waiting for URL to contain "vnpay" or "sandbox"
 WebUI.delay(5)

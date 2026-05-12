@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//button[normalize-space()='Submit']</value>
+         <value>//button[@type='submit']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -18,7 +18,8 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//button[normalize-space()='Submit']</value>
+      <value>//button[@type='submit']</value>
       <webElementGuid>ac91365f-3f72-48a5-92c4-d989160b4c39</webElementGuid>
    </webElementProperties>
 </WebElementEntity>
+

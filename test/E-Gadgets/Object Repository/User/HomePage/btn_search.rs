@@ -7,11 +7,11 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//a[contains(text(),'Tìm kiếm')]</value>
+         <value>//a[contains(normalize-space(.),'Tìm kiếm')]</value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//a[contains(text(),'Tìm kiếm')]</value>
+         <value>//a[contains(normalize-space(.),'Tìm kiếm')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -22,7 +22,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//a[contains(text(),'Tìm kiếm')]</value>
+      <value>//a[contains(normalize-space(.),'Tìm kiếm')]</value>
       <webElementGuid>1660e554-9077-4ab0-bc5e-f28f81a0bdfa</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>(//button[@type='button'][normalize-space()='Xóa'])</value>
+         <value>//tbody/tr//button[contains(@class,'btn-danger-modern') and contains(.,'Xóa')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -18,7 +18,9 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>(//button[@type='button'][normalize-space()='Xóa'])</value>
+      <value>//tbody/tr//button[contains(@class,'btn-danger-modern') and contains(.,'Xóa')]</value>
       <webElementGuid>dabf9a91-2c94-4e5e-9e42-f028c510e3b7</webElementGuid>
    </webElementProperties>
 </WebElementEntity>
+
+

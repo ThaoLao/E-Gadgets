@@ -25,23 +25,23 @@ WebUI.click(findTestObject('Object Repository/User/HomePage/icon_Accounts'))
 WebUI.verifyElementVisible(findTestObject('Object Repository/User/HomePage/icon_admin'))
 WebUI.click(findTestObject('Object Repository/User/HomePage/icon_admin'))
 WebUI.delay(2)
-WebUI.click(makeTO("//a[contains(@class,'nav-link') and contains(.,'Sản phẩm')]"))
+WebUI.click(makeTO("//a[contains(@href, '/admin/products_management')]"))
 WebUI.delay(1)
 WebUI.click(makeTO("//a[contains(@href,'/admin/products_management')]"))
 WebUI.delay(3)
 
 // Click Tam dung button on first active product
-WebUI.click(makeTO("(//button[contains(text(),'Tạm dừng')])[1]"))
+WebUI.click(makeTO("(//tbody/tr)[1]//button[contains(.,'Tạm dừng')]"))
 WebUI.delay(1)
 
 // Verify popup displays
 WebUI.verifyElementVisible(makeTO("//div[@id='deleteConfirmationModal']"))
-WebUI.verifyElementVisible(makeTO("//p[contains(text(),'Bạn có chắc muốn tạm dừng bán sản phẩm này?')]"))
-WebUI.verifyElementVisible(makeTO("//button[contains(text(),'Hủy')]"))
-WebUI.verifyElementVisible(makeTO("//a[@id='deleteButton']"))
+WebUI.verifyElementVisible(makeTO("//p[contains(normalize-space(.),'Bạn có chắc muốn tạm dừng bán sản phẩm này?')]"))
+WebUI.verifyElementVisible(makeTO("//button[contains(normalize-space(.),'Hủy')]"))
+WebUI.verifyElementVisible(makeTO("//div[@id='deleteConfirmationModal']//a[@id='deleteButton']"))
 
 // Cancel
-WebUI.click(makeTO("//div[@id='deleteConfirmationModal']//button[contains(text(),'Hủy')]"))
+WebUI.click(makeTO("//div[@id='deleteConfirmationModal']//button[contains(normalize-space(.),'Hủy')]"))
 WebUI.delay(1)
 
 try {
@@ -49,3 +49,5 @@ try {
 } catch (Exception e) {}
 
 SessionHelper.endLoggedInSessionCleanly()
+
+

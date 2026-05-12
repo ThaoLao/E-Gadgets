@@ -23,7 +23,7 @@ WebUI.click(findTestObject('Object Repository/User/HomePage/icon_Accounts'))
 WebUI.verifyElementVisible(findTestObject('Object Repository/User/HomePage/icon_admin'))
 WebUI.click(findTestObject('Object Repository/User/HomePage/icon_admin'))
 WebUI.delay(2)
-WebUI.click(makeTO("//a[contains(@class,'nav-link') and contains(.,'Sản phẩm')]"))
+WebUI.click(makeTO("//a[contains(@href, '/admin/products_management')]"))
 WebUI.delay(1)
 WebUI.click(makeTO("//a[contains(@href,'/admin/products_management')]"))
 WebUI.delay(3)
@@ -32,7 +32,7 @@ WebUI.delay(3)
 WebUI.click(makeTO("//select[@id='categoryId']"))
 WebUI.delay(1)
 WebUI.click(makeTO("(//select[@id='categoryId']/option)[2]"))
-WebUI.click(makeTO("//button[contains(text(),'Tìm kiếm')]"))
+WebUI.click(makeTO("//button[contains(normalize-space(.), 'Tìm kiếm')]"))
 WebUI.delay(3)
 
 WebUI.verifyElementPresent(makeTO("//tbody/tr"), 5, FailureHandling.OPTIONAL)
@@ -41,3 +41,4 @@ SessionHelper.endLoggedInSessionCleanly()
 try {
     util.updateExcelTestResult('e:/Support_DoAn/LaoThanhThao/Source/TestCase_DoAn_LaoThanhThao.xlsx', 'Quản lý sản phẩm', 'Theo danh mục', 'Pass', 'Pass')
 } catch (Exception e) {}
+

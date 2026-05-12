@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//p[normalize-space()='Thêm sách thành công!']</value>
+         <value>//div[contains(@class, 'alert-primary-modern') or contains(@class, 'alert-success-modern')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -18,7 +18,8 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//p[normalize-space()='Thêm sách thành công!']</value>
+      <value>//div[contains(@class, 'alert-primary-modern') or contains(@class, 'alert-success-modern')]</value>
       <webElementGuid>60549a9e-b9e7-4594-9dcb-bfb86a229c67</webElementGuid>
    </webElementProperties>
 </WebElementEntity>
+

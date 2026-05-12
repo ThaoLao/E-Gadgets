@@ -41,7 +41,7 @@ WebUI.setText(findTestObject('Object Repository/Admin/Admin_Category/Input_Categ
 WebUI.click(findTestObject('Object Repository/Admin/Admin_Category/Button_Category_Add_Submit'))
 WebUI.delay(2)
 
-WebUI.verifyElementPresent(makeTO("//div[contains(@class,'alert')]//span[contains(text(),'thành công')]"), 5, FailureHandling.OPTIONAL)
+WebUI.verifyElementPresent(makeTO("//div[contains(@class,'alert')]//span[contains(normalize-space(.),'thành công')]"), 5, FailureHandling.OPTIONAL)
 GlobalVariable.CategoryIndex = index + 1
 
 SessionHelper.endLoggedInSessionCleanly()

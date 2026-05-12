@@ -44,25 +44,7 @@ import utils.*
 		WebUI.comment("Không tìm thấy nút 'Phản hồi'")
 	}
 	
-	TestObject btnDeleteList = findTestObject('Object Repository/Admin/ContactManagement/List_Button_Delete') 
-	List<WebElement> deleteBtns = WebUiCommonHelper.findWebElements(btnDeleteList, 10)
+
 	
-	if (deleteBtns.size() > 0) {
-		WebElement deleteBtn = deleteBtns.get(0)
-		WebUI.executeJavaScript("arguments[0].scrollIntoView(true);", Arrays.asList(deleteBtn))
-		WebUI.delay(1)
-		WebUI.executeJavaScript("arguments[0].click();", Arrays.asList(deleteBtn))
-	
-		// Xác nhận popup xóa nếu có
-		TestObject confirmPopup = findTestObject('Object Repository/Admin/ContactManagement/Popup_Confirm_Delete')
-		if (WebUI.waitForElementVisible(confirmPopup, 5, FailureHandling.OPTIONAL)) {
-			WebUI.click(findTestObject('Object Repository/Admin/ContactManagement/Popup_Confirm_Delete_Button'))
-		} else {
-		}
-	
-		WebUI.delay(2)
-	} else {
-	}
-	
-	Test Cases/User/LoginLogout/LO04_login_successfully
+	SessionHelper.endLoggedInSessionCleanly()
 	

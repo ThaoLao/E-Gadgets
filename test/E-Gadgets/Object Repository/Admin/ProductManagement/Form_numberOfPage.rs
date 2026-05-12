@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//input[@id='numberOfPages']</value>
+         <value>//input[@id='weight']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -18,7 +18,8 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//input[@id='numberOfPages']</value>
+      <value>//input[@id='weight']</value>
       <webElementGuid>1f61f4d8-5d84-4f37-9687-5a6b1f210fb1</webElementGuid>
    </webElementProperties>
 </WebElementEntity>
+

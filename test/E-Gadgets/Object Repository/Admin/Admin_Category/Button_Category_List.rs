@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//a[contains(normalize-space(), 'Danh mục')]/following-sibling::div//a[contains(normalize-space(), 'Danh Sách Danh Mục')]</value>
+         <value>//a[contains(@href, '/admin/categories_management')]</value>
       </entry>
       <entry>
          <key>BASIC</key>
@@ -17,3 +17,4 @@
    <smartLocatorEnabled>false</smartLocatorEnabled>
    <useRalativeImagePath>false</useRalativeImagePath>
 </WebElementEntity>
+

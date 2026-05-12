@@ -10,10 +10,11 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//a[@class='page-link' and contains(normalize-space(), 'Trang cuối')]</value>
+         <value>//a[contains(., 'Cuối')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
    <smartLocatorEnabled>false</smartLocatorEnabled>
    <useRalativeImagePath>false</useRalativeImagePath>
 </WebElementEntity>
+

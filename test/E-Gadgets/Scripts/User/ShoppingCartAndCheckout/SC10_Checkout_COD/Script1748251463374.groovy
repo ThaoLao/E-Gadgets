@@ -16,11 +16,11 @@ TestObject makeTO(String xpath) {
 new openLoginPage().navigateToLogin()
 WebUI.setText(makeTO("//input[@id='email']"), GlobalVariable.User_Email)
 WebUI.setText(makeTO("//input[@id='password']"), GlobalVariable.General_Password)
-WebUI.click(makeTO("//button[contains(text(),'Đăng nhập')]"))
+WebUI.click(makeTO("//button[contains(normalize-space(.),'Đăng nhập')]"))
 
 WebUI.navigateToUrl(GlobalVariable.URL + '/shop')
 WebUI.click(makeTO("(//div[contains(@class,'product__thumb')]/a)[1]"))
-WebUI.click(makeTO("//button[contains(text(),'Thêm vào giỏ hàng')]"))
+WebUI.click(makeTO("//button[contains(normalize-space(.),'Thêm vào giỏ hàng')]"))
 WebUI.waitForAlert(5)
 WebUI.acceptAlert()
 
@@ -39,9 +39,9 @@ WebUI.setText(makeTO("//input[@id='email']"), GlobalVariable.User_Email)
 WebUI.clearText(makeTO("//textarea[@id='address']"))
 WebUI.setText(makeTO("//textarea[@id='address']"), '123 Street')
 
-WebUI.click(makeTO("//button[contains(text(),'đặt hàng')]"))
+WebUI.click(makeTO("//button[contains(normalize-space(.),'đặt hàng')]"))
 WebUI.delay(2)
-WebUI.verifyElementVisible(makeTO("//h2[contains(text(),'Lịch sử đơn hàng')]"), com.kms.katalon.core.model.FailureHandling.OPTIONAL)
+WebUI.verifyElementVisible(makeTO("//h2[contains(normalize-space(.),'Lịch sử đơn hàng')]"), com.kms.katalon.core.model.FailureHandling.OPTIONAL)
 
 try {
     util.updateExcelTestResult('e:/Support_DoAn/LaoThanhThao/Source/TestCase_DoAn_LaoThanhThao.xlsx', 'Thanh toán', 'Thanh toán COD', 'Pass', 'Pass')

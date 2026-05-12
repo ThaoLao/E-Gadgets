@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>(//button[contains(text(),'×')])</value>
+         <value>(//button[contains(normalize-space(.),'×')])</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -18,7 +18,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>(//button[contains(text(),'×')])</value>
+      <value>(//button[contains(normalize-space(.),'×')])</value>
       <webElementGuid>33aa6aa2-5953-4183-9f4b-16ae76313131</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

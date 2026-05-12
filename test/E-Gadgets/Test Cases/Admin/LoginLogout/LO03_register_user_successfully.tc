@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Kiểm tra trang /login theo sheet Đăng nhập trong TestCase_DoAn_LaoThanhThao.xlsx (thành công, bỏ trống, sai định dạng email, sai MK, không tồn tại, trim email, type password, link Đăng ký). UI: login.html — script: Scripts/Admin/LoginLogout/LO03_register_user_successfully</description>
+   <name>LO03_register_user_successfully</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>f94c2c21-e47a-4cc5-9542-2d9b8716416e</testCaseGuid>
+</TestCaseEntity>

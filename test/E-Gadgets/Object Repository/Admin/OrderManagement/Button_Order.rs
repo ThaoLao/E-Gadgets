@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>(//a[@class='nav-link collapsed'])[4]</value>
+         <value>//a[contains(@href, '/admin/orders_management')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -18,7 +18,8 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>(//a[@class='nav-link collapsed'])[4]</value>
+      <value>//a[contains(@href, '/admin/orders_management')]</value>
       <webElementGuid>1ac2ab3f-084b-42fa-9bd9-fd1fb5e22514</webElementGuid>
    </webElementProperties>
 </WebElementEntity>
+

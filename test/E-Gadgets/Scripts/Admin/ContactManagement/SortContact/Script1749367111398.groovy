@@ -25,7 +25,6 @@ import utils.*
 	WebUI.click(findTestObject('Object Repository/User/HomePage/icon_admin'))
 	WebUI.delay(2)
 	WebUI.click(findTestObject('Object Repository/Admin/ContactManagement/Button_Contact'))
-	WebUI.click(findTestObject('Object Repository/Admin/ContactManagement/Button_Contact_Management'))
 	WebUI.delay(2)
 	
 	// === Chọn Sort By "Cũ nhất" ===
@@ -57,5 +56,4 @@ import utils.*
 		WebUI.comment("Không đủ 2 dòng liên hệ để so sánh.")
 		return false
 	}
-	
-	Test Cases/User/LoginLogout/LO04_login_successfully
+	SessionHelper.endLoggedInSessionCleanly()

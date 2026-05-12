@@ -29,7 +29,6 @@ import utils.*
 	WebUI.click(findTestObject('Object Repository/User/HomePage/icon_admin'))
 	WebUI.delay(2)
 	WebUI.click(findTestObject('Object Repository/Admin/ContactManagement/Button_Contact'))
-	WebUI.click(findTestObject('Object Repository/Admin/ContactManagement/Button_Contact_Management'))
 	WebUI.delay(2)
 	
 	

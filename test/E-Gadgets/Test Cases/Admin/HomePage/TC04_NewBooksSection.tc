@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC04_NewBooksSection</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>769d259d-018e-4c13-aa06-9f03c12ccc6e</testCaseGuid>
+</TestCaseEntity>

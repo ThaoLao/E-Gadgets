@@ -12,8 +12,8 @@ WebUI.setText(makeTO("//input[@id='fullname']"), "!@#$%^&*()")
 WebUI.setText(makeTO("//input[@id='email']"), "test@gmail.com")
 WebUI.setText(makeTO("//input[@id='title']"), "!@#$%^&*()")
 WebUI.setText(makeTO("//textarea[@id='message']"), "Test")
-WebUI.click(makeTO("//button[contains(text(),'Gửi')]"))
+WebUI.click(makeTO("//button[contains(normalize-space(.),'Gửi')]"))
 
 // System should process it normally based on expected result
-WebUI.verifyElementVisible(makeTO("//div[contains(text(),'Cảm ơn bạn đã liên hệ')]"))
+WebUI.verifyElementVisible(makeTO("//div[contains(normalize-space(.),'Cảm ơn bạn đã liên hệ')]"))
 try { util.updateExcelTestResult('e:/Support_DoAn/LaoThanhThao/Source/TestCase_DoAn_LaoThanhThao.xlsx', 'Liên hệ', 'Gửi thất bại', 'Pass', 'Pass') } catch (Exception e) {}

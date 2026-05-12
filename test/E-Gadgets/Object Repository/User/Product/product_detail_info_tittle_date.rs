@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//th[contains(text(),'Ngày xuất bản')]</value>
+         <value>//th[contains(normalize-space(.),'Ngày xuất bản')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -18,7 +18,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//th[contains(text(),'Ngày xuất bản')]</value>
+      <value>//th[contains(normalize-space(.),'Ngày xuất bản')]</value>
       <webElementGuid>dbfe9ba8-93ac-4273-b054-30fa8c537743</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

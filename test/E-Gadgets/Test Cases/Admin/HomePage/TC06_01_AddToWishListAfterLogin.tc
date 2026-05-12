@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC06_01_AddToWishListAfterLogin</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>f1a7c96e-350c-40ba-a3ed-bb07739b9a6d</testCaseGuid>
+</TestCaseEntity>

@@ -8,7 +8,7 @@ dataFileUtil util = new dataFileUtil()
 TestObject makeTO(String xpath) { TestObject to = new TestObject(); to.addProperty('xpath', ConditionType.EQUALS, xpath); return to; }
 
 WebUI.navigateToUrl(GlobalVariable.URL + '/contact')
-WebUI.click(makeTO("//button[contains(text(),'Gửi')]"))
+WebUI.click(makeTO("//button[contains(normalize-space(.),'Gửi')]"))
 
 // Check if HTML5 validation prevents form submit
 String validationMessage = WebUI.getAttribute(makeTO("//input[@id='fullname']"), "validationMessage")

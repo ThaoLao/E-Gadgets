@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//a[contains(text(),'Thêm bài viết')]</value>
+         <value>//a[contains(.,'Thêm bài viết mới')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -18,7 +18,8 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//a[contains(text(),'Thêm bài viết')]</value>
+      <value>//a[contains(.,'Thêm bài viết mới')]</value>
       <webElementGuid>a30fbd6e-cb7b-4d49-b0fc-3b614830dc29</webElementGuid>
    </webElementProperties>
 </WebElementEntity>
+

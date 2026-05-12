@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//h3[contains(text(),'Chi tiết đơn hàng')]</value>
+         <value>//h3[contains(normalize-space(.),'Chi tiết đơn hàng')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -18,7 +18,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//h3[contains(text(),'Chi tiết đơn hàng')]</value>
+      <value>//h3[contains(normalize-space(.),'Chi tiết đơn hàng')]</value>
       <webElementGuid>9c3a3c3a-f5eb-494c-9998-551b8dc2080b</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

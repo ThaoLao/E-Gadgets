@@ -25,12 +25,12 @@ WebUI.click(findTestObject('Object Repository/User/HomePage/icon_Accounts'))
 WebUI.verifyElementVisible(findTestObject('Object Repository/User/HomePage/icon_admin'))
 WebUI.click(findTestObject('Object Repository/User/HomePage/icon_admin'))
 WebUI.delay(2)
-WebUI.click(makeTO("//a[contains(@class,'nav-link') and contains(.,'Sản phẩm')]"))
+WebUI.click(makeTO("//a[contains(@href, '/admin/products_management')]"))
 WebUI.delay(1)
 WebUI.click(makeTO("//a[contains(@href,'/admin/products_management')]"))
 WebUI.delay(3)
 
-WebUI.click(makeTO("//a[contains(text(),'Thêm sản phẩm mới')]"))
+WebUI.click(makeTO("//a[contains(normalize-space(.),'Thêm sản phẩm mới')]"))
 WebUI.delay(2)
 WebUI.verifyMatch(WebUI.getUrl(), '.*products_management.*add.*', true)
 
@@ -39,3 +39,4 @@ try {
 } catch (Exception e) {}
 
 SessionHelper.endLoggedInSessionCleanly()
+

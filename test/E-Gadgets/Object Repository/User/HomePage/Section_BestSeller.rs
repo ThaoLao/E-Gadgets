@@ -10,7 +10,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//h2[contains(text(), 'Bán ')]/ancestor::section</value>
+         <value>//h2[contains(normalize-space(.), 'Bán ')]/ancestor::section</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

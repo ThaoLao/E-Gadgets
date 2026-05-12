@@ -34,7 +34,6 @@ import utils.*
 	WebUI.click(findTestObject('Object Repository/User/HomePage/icon_admin'))
 	WebUI.delay(2)
 	WebUI.click(findTestObject('Object Repository/Admin/PostManagement/Button_Post'))
-	WebUI.click(findTestObject('Object Repository/Admin/PostManagement/Button_Post_Management'))
 	WebUI.delay(2)
 	
 	WebUI.click(findTestObject('Object Repository/Admin/PostManagement/Button_Add_Post'))

@@ -12,9 +12,9 @@ WebUI.setText(makeTO("//input[@id='fullname']"), "Nguyen Van A")
 WebUI.setText(makeTO("//input[@id='email']"), "test@gmail.com")
 WebUI.setText(makeTO("//input[@id='title']"), "Test Subject")
 WebUI.setText(makeTO("//textarea[@id='message']"), "Test Message")
-WebUI.click(makeTO("//button[contains(text(),'Gửi')]"))
+WebUI.click(makeTO("//button[contains(normalize-space(.),'Gửi')]"))
 
-WebUI.verifyElementVisible(makeTO("//div[contains(text(),'Cảm ơn bạn đã liên hệ')]"))
+WebUI.verifyElementVisible(makeTO("//div[contains(normalize-space(.),'Cảm ơn bạn đã liên hệ')]"))
 String nameVal = WebUI.getAttribute(makeTO("//input[@id='fullname']"), "value")
 WebUI.verifyEqual(nameVal, "")
 

@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//a[normalize-space()='Last']</value>
+         <value>//a[contains(., 'Cuối')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -18,7 +18,8 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//a[normalize-space()='Last']</value>
+      <value>//a[contains(., 'Cuối')]</value>
       <webElementGuid>144e1a0e-3cbc-41f3-bf4f-ea631a2af924</webElementGuid>
    </webElementProperties>
 </WebElementEntity>
+

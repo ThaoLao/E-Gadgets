@@ -31,9 +31,9 @@ WebUI.click(findTestObject('Object Repository/Admin/UserManagement/Button_User_M
 WebUI.delay(3)
 SessionHelper.endLoggedInSessionCleanly()
 // Find a non-admin user delete button and click
-boolean hasDeleteBtn = WebUI.verifyElementPresent(makeTO("(//button[contains(text(),'Xóa')])[1]"), 3, FailureHandling.OPTIONAL)
+boolean hasDeleteBtn = WebUI.verifyElementPresent(makeTO("(//tbody/tr)[1]//button[contains(@class,'btn-danger-modern') and contains(.,'Xóa')]"), 3, FailureHandling.OPTIONAL)
 if (hasDeleteBtn) {
-    WebUI.click(makeTO("(//button[contains(text(),'Xóa')])[1]"))
+    WebUI.click(makeTO("(//tbody/tr)[1]//button[contains(@class,'btn-danger-modern') and contains(.,'Xóa')]"))
     WebUI.delay(1)
     // Verify confirm dialog appears
     String alertText = WebUI.getAlertText()
@@ -52,3 +52,4 @@ try {
 } catch (Exception e) {}
 
 }
+

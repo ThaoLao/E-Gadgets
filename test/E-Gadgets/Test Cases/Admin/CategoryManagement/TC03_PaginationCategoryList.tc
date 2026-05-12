@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC03_PaginationCategoryList</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>d7416bb2-2b0d-4c34-8fa5-d9ad3298e91e</testCaseGuid>
+</TestCaseEntity>

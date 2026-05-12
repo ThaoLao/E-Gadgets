@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//td[@class='order-details']//a[contains(text(),'Xem chi tiết')]</value>
+         <value>//td[@class='order-details']//a[contains(normalize-space(.),'Xem chi tiết')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -18,7 +18,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>(//a[contains(text(),'Xem chi tiết')])</value>
+      <value>(//a[contains(normalize-space(.),'Xem chi tiết')])</value>
       <webElementGuid>1ade9b6e-56bd-4185-99d0-daaefc4b48df</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

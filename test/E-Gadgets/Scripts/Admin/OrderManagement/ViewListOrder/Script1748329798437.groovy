@@ -30,8 +30,6 @@ import utils.*
 	
 	WebUI.waitForElementClickable(findTestObject('Object Repository/Admin/OrderManagement/Button_Order'), 3)
 	WebUI.click(findTestObject('Object Repository/Admin/OrderManagement/Button_Order'))
-	WebUI.waitForElementClickable(findTestObject('Object Repository/Admin/OrderManagement/Button_Order_Management'), 3)
-	WebUI.click(findTestObject('Object Repository/Admin/OrderManagement/Button_Order_Management'))
 	WebUI.delay(3)
 	
 	WebUI.verifyElementVisible(findTestObject('Object Repository/Admin/OrderManagement/Table_Order_List'))

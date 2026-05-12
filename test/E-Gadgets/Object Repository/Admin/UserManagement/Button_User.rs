@@ -9,8 +9,12 @@
          <key>BASIC</key>
          <value>//*[@id=&quot;sidenavAccordion&quot;]/div[1]/div/a[2]</value>
       </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//span[contains(normalize-space(.), 'Người dùng') and contains(@class,'ms-2')]</value>
+      </entry>
    </selectorCollection>
-   <selectorMethod>BASIC</selectorMethod>
+   <selectorMethod>XPATH</selectorMethod>
    <smartLocatorEnabled>false</smartLocatorEnabled>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -19,6 +23,6 @@
       <name>xpath</name>
       <type>Main</type>
       <value>//*[@id=&quot;sidenavAccordion&quot;]/div[1]/div/a[2]</value>
-      <webElementGuid>7b0e2577-c12c-448d-b52f-ffba2309b088</webElementGuid>
+      <webElementGuid>6362f2b9-5713-48d9-a4e7-6d8877b1b835</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>(//a[@type='button'][contains(text(),'Cập nhật')])</value>
+         <value>//tbody/tr//a[contains(@class,'btn-primary-modern') and contains(.,'Sửa')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -18,7 +18,9 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>(//a[@type='button'][contains(text(),'Cập nhật')])</value>
+      <value>//tbody/tr//a[contains(@class,'btn-primary-modern') and contains(.,'Sửa')]</value>
       <webElementGuid>832728df-285d-43a8-8950-ea74c501693a</webElementGuid>
    </webElementProperties>
 </WebElementEntity>
+
+

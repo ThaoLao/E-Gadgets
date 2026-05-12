@@ -17,7 +17,7 @@ TestObject makeTO(String xpath) {
 new openLoginPage().navigateToLogin()
 WebUI.setText(makeTO("//input[@id='email']"), GlobalVariable.User_Email)
 WebUI.setText(makeTO("//input[@id='password']"), GlobalVariable.General_Password)
-WebUI.click(makeTO("//button[contains(text(),'Đăng nhập')]"))
+WebUI.click(makeTO("//button[contains(normalize-space(.),'Đăng nhập')]"))
 
 new openShopPage().navigateToShop()
 

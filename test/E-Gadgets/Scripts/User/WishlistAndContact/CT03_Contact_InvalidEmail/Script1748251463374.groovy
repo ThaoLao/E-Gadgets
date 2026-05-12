@@ -12,7 +12,7 @@ WebUI.setText(makeTO("//input[@id='fullname']"), "Nguyen Van A")
 WebUI.setText(makeTO("//input[@id='email']"), "invalid-email")
 WebUI.setText(makeTO("//input[@id='title']"), "Test")
 WebUI.setText(makeTO("//textarea[@id='message']"), "Test")
-WebUI.click(makeTO("//button[contains(text(),'Gửi')]"))
+WebUI.click(makeTO("//button[contains(normalize-space(.),'Gửi')]"))
 
 String validationMessage = WebUI.getAttribute(makeTO("//input[@id='email']"), "validationMessage")
 WebUI.verifyNotEqual(validationMessage, "")

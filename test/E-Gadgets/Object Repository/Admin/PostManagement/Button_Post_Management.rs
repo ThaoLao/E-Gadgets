@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//a[contains(text(),'Danh Sách Bài viết')]</value>
+         <value>//a[contains(@href, '/admin/blogs_management')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -18,7 +18,8 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//a[contains(text(),'Danh Sách Bài viết')]</value>
+      <value>//a[contains(@href, '/admin/blogs_management')]</value>
       <webElementGuid>6cc34275-e15e-402e-b60d-c14cf9638e63</webElementGuid>
    </webElementProperties>
 </WebElementEntity>
+

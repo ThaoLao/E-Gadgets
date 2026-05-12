@@ -25,14 +25,14 @@ WebUI.click(findTestObject('Object Repository/User/HomePage/icon_Accounts'))
 WebUI.verifyElementVisible(findTestObject('Object Repository/User/HomePage/icon_admin'))
 WebUI.click(findTestObject('Object Repository/User/HomePage/icon_admin'))
 WebUI.delay(2)
-WebUI.click(makeTO("//a[contains(@class,'nav-link') and contains(.,'Sản phẩm')]"))
+WebUI.click(makeTO("//a[contains(@href, '/admin/products_management')]"))
 WebUI.delay(1)
 WebUI.click(makeTO("//a[contains(@href,'/admin/products_management')]"))
 WebUI.delay(3)
 
-WebUI.click(makeTO("(//a[contains(text(),'Sửa')])[1]"))
+WebUI.click(makeTO("(//tbody/tr)[1]//a[contains(@class,'btn-primary-modern') and contains(.,'Sửa')]"))
 WebUI.delay(2)
-WebUI.click(makeTO("//a[contains(text(),'QUAY LẠI')] | //a[contains(text(),'Quay lại')]"))
+WebUI.click(makeTO("//a[contains(normalize-space(.),'QUAY LẠI')] | //a[contains(normalize-space(.),'Quay lại')]"))
 WebUI.delay(2)
 WebUI.verifyMatch(WebUI.getUrl(), '.*products_management.*', true)
 
@@ -41,3 +41,5 @@ SessionHelper.endLoggedInSessionCleanly()
 try {
     util.updateExcelTestResult('e:/Support_DoAn/LaoThanhThao/Source/TestCase_DoAn_LaoThanhThao.xlsx', 'Quản lý sản phẩm', 'Quay lại trang trước', 'Pass', 'Pass')
 } catch (Exception e) {}
+
+

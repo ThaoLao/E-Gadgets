@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>(//button[contains(text(),'Thêm giỏ hàng')])</value>
+         <value>(//button[contains(normalize-space(.),'Thêm giỏ hàng')])</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -18,7 +18,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>(//button[contains(text(),'Thêm giỏ hàng')])</value>
+      <value>(//button[contains(normalize-space(.),'Thêm giỏ hàng')])</value>
       <webElementGuid>1f17451c-c980-4fef-bf89-f493f474c0e6</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

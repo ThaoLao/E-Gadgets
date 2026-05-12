@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//button[contains(text(),'Hủy')]</value>
+         <value>//button[contains(., 'Hủy')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -18,7 +18,8 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//button[contains(text(),'Hủy')]</value>
+      <value>//button[contains(., 'Hủy')]</value>
       <webElementGuid>e393e1ad-10c0-479f-916d-300622c3375e</webElementGuid>
    </webElementProperties>
 </WebElementEntity>
+

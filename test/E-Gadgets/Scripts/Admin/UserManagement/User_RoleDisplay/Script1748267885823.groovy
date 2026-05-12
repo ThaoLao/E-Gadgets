@@ -33,8 +33,8 @@ WebUI.delay(3)
 // Verify role badges exist
 WebUI.verifyElementPresent(makeTO("//span[contains(@class,'role-badge')]"), 5)
 // Verify ADMIN or USER badges
-boolean hasAdmin = WebUI.verifyElementPresent(makeTO("//span[contains(@class,'role-admin') and contains(text(),'ADMIN')]"), 3, FailureHandling.OPTIONAL)
-boolean hasUser = WebUI.verifyElementPresent(makeTO("//span[contains(@class,'role-user') and contains(text(),'USER')]"), 3, FailureHandling.OPTIONAL)
+boolean hasAdmin = WebUI.verifyElementPresent(makeTO("//span[contains(@class,'role-admin') and contains(normalize-space(.),'ADMIN')]"), 3, FailureHandling.OPTIONAL)
+boolean hasUser = WebUI.verifyElementPresent(makeTO("//span[contains(@class,'role-user') and contains(normalize-space(.),'USER')]"), 3, FailureHandling.OPTIONAL)
 WebUI.verifyEqual(hasAdmin || hasUser, true)
 SessionHelper.endLoggedInSessionCleanly()
 try {

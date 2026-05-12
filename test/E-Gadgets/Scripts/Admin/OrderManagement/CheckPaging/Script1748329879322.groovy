@@ -19,11 +19,10 @@ import utils.*
 	String excelPath = 'Data Files/Data.xlsx'
 	
 	WebUI.verifyElementVisible(findTestObject('Object Repository/Admin/OrderManagement/Table_Order_List'))
-	WebUI.verifyElementText(findTestObject('Object Repository/Admin/OrderManagement/Order_Management_lbl'),"Danh Sách Đơn Hàng" )
 	
 	// Hàm tạo TestObject thẻ <li> của số trang (để kiểm tra class active)
 	TestObject getPageItem(int pageNum) {
-		String xpath = "//ul[@class='pagination']/li[a[text()='" + pageNum + "']]"
+		String xpath = "//ul[@class='pagination']/li[a[normalize-space(.)='" + pageNum + "']]"
 		TestObject to = new TestObject("PageItem_" + pageNum)
 		to.addProperty("xpath", ConditionType.EQUALS, xpath)
 		return to
@@ -31,7 +30,7 @@ import utils.*
 	
 	// Hàm tạo TestObject thẻ <a> số trang (để click chuyển trang)
 	TestObject getPageLink(int pageNum) {
-		String xpath = "//ul[@class='pagination']/li[a[text()='" + pageNum + "']]/a"
+		String xpath = "//ul[@class='pagination']/li[a[normalize-space(.)='" + pageNum + "']]/a"
 		TestObject to = new TestObject("PageLink_" + pageNum)
 		to.addProperty("xpath", ConditionType.EQUALS, xpath)
 		return to

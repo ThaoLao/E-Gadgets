@@ -16,7 +16,7 @@ TestObject makeTO(String xpath) {
 new openLoginPage().navigateToLogin()
 WebUI.setText(makeTO("//input[@id='email']"), GlobalVariable.User_Email)
 WebUI.setText(makeTO("//input[@id='password']"), GlobalVariable.General_Password)
-WebUI.click(makeTO("//button[contains(text(),'Đăng nhập')]"))
+WebUI.click(makeTO("//button[contains(normalize-space(.),'Đăng nhập')]"))
 
 WebUI.navigateToUrl(GlobalVariable.URL + '/cart')
 while (WebUI.verifyElementPresent(makeTO("(//td[@class='product-remove']/a)[1]"), 2, com.kms.katalon.core.model.FailureHandling.OPTIONAL)) {
@@ -25,7 +25,7 @@ while (WebUI.verifyElementPresent(makeTO("(//td[@class='product-remove']/a)[1]")
 }
 
 WebUI.navigateToUrl(GlobalVariable.URL + '/cart/checkout')
-WebUI.verifyElementVisible(makeTO("//div[contains(text(),'Hệ thống báo lỗi không có sản phẩm nào trong giỏ hàng')]"))
+WebUI.verifyElementVisible(makeTO("//div[contains(normalize-space(.),'Hệ thống báo lỗi không có sản phẩm nào trong giỏ hàng')]"))
 
 try {
     util.updateExcelTestResult('e:/Support_DoAn/LaoThanhThao/Source/TestCase_DoAn_LaoThanhThao.xlsx', 'Quản lý giỏ hàng', 'Điều hướng thanh toán', 'Pass', 'Pass')

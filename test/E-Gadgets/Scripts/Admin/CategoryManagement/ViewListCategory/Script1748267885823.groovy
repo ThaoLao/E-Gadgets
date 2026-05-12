@@ -30,10 +30,10 @@ WebUI.waitForElementClickable(findTestObject('Object Repository/Admin/Admin_Cate
 WebUI.click(findTestObject('Object Repository/Admin/Admin_Category/Button_Category_List'))
 WebUI.delay(3)
 
-WebUI.verifyElementVisible(makeTO("//th[contains(text(),'ID')]"))
-WebUI.verifyElementVisible(makeTO("//th[contains(text(),'Tên danh mục')]"))
-WebUI.verifyElementVisible(makeTO("//th[contains(text(),'Mô tả')]"))
-WebUI.verifyElementVisible(makeTO("//th[contains(text(),'Hành động')]"))
+WebUI.verifyElementVisible(makeTO("//th[contains(normalize-space(.),'ID')]"))
+WebUI.verifyElementVisible(makeTO("//th[contains(normalize-space(.),'Tên danh mục')]"))
+WebUI.verifyElementVisible(makeTO("//th[contains(normalize-space(.),'Mô tả')]"))
+WebUI.verifyElementVisible(makeTO("//th[contains(normalize-space(.),'Hành động')]"))
 SessionHelper.endLoggedInSessionCleanly()
 try {
     util.updateExcelTestResult('e:/Support_DoAn/LaoThanhThao/Source/TestCase_DoAn_LaoThanhThao.xlsx', 'Quản lý danh mục', 'Hiển thị dữ liệu', 'Pass', 'Pass')

@@ -9,8 +9,12 @@
          <key>BASIC</key>
          <value>//*[@id=&quot;sidenavAccordion&quot;]/div[1]/div/a[7]</value>
       </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//span[contains(normalize-space(.), 'Bài viết') and contains(@class,'ms-2')]</value>
+      </entry>
    </selectorCollection>
-   <selectorMethod>BASIC</selectorMethod>
+   <selectorMethod>XPATH</selectorMethod>
    <smartLocatorEnabled>false</smartLocatorEnabled>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -19,6 +23,6 @@
       <name>xpath</name>
       <type>Main</type>
       <value>//*[@id=&quot;sidenavAccordion&quot;]/div[1]/div/a[7]</value>
-      <webElementGuid>25f3dd59-b2be-4975-9fbe-9c693c2b5fa5</webElementGuid>
+      <webElementGuid>277ccefa-0f30-403a-973b-aaa865850fdd</webElementGuid>
    </webElementProperties>
 </WebElementEntity>

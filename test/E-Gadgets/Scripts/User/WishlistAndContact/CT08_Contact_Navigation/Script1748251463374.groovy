@@ -9,11 +9,11 @@ TestObject makeTO(String xpath) { TestObject to = new TestObject(); to.addProper
 
 WebUI.navigateToUrl(GlobalVariable.URL + '/contact')
 
-WebUI.click(makeTO("//a[text()='Trang chủ']"))
+WebUI.click(makeTO("//a[normalize-space(.)='Trang chủ']"))
 WebUI.verifyMatch(WebUI.getUrl(), ".*", true)
 
 WebUI.navigateToUrl(GlobalVariable.URL + '/contact')
-WebUI.click(makeTO("//a[text()='Cửa hàng']"))
+WebUI.click(makeTO("//a[normalize-space(.)='Cửa hàng']"))
 WebUI.verifyMatch(WebUI.getUrl(), ".*shop.*", true)
 
 try { util.updateExcelTestResult('e:/Support_DoAn/LaoThanhThao/Source/TestCase_DoAn_LaoThanhThao.xlsx', 'Liên hệ', 'Chuyển trang liên kết', 'Pass', 'Pass') } catch (Exception e) {}

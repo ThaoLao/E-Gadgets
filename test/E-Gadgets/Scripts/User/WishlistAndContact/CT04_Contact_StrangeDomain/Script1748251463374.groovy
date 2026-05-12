@@ -12,7 +12,7 @@ WebUI.setText(makeTO("//input[@id='fullname']"), "Nguyen Van A")
 WebUI.setText(makeTO("//input[@id='email']"), "test@company.international")
 WebUI.setText(makeTO("//input[@id='title']"), "Test")
 WebUI.setText(makeTO("//textarea[@id='message']"), "Test")
-WebUI.click(makeTO("//button[contains(text(),'Gửi')]"))
+WebUI.click(makeTO("//button[contains(normalize-space(.),'Gửi')]"))
 
-WebUI.verifyElementVisible(makeTO("//div[contains(text(),'Cảm ơn bạn đã liên hệ')]"))
+WebUI.verifyElementVisible(makeTO("//div[contains(normalize-space(.),'Cảm ơn bạn đã liên hệ')]"))
 try { util.updateExcelTestResult('e:/Support_DoAn/LaoThanhThao/Source/TestCase_DoAn_LaoThanhThao.xlsx', 'Liên hệ', 'Email có tên miền lạ', 'Pass', 'Pass') } catch (Exception e) {}

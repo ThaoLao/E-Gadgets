@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//input[@id='bookTitle']</value>
+         <value>//input[@id='productTitle']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -18,7 +18,8 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//input[@id='bookTitle']</value>
+      <value>//input[@id='productTitle']</value>
       <webElementGuid>0d60e876-6323-4541-909e-813763a184d3</webElementGuid>
    </webElementProperties>
 </WebElementEntity>
+

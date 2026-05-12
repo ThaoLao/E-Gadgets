@@ -16,12 +16,12 @@ TestObject makeTO(String xpath) {
 new openLoginPage().navigateToLogin()
 WebUI.setText(makeTO("//input[@id='email']"), GlobalVariable.User_Email)
 WebUI.setText(makeTO("//input[@id='password']"), GlobalVariable.General_Password)
-WebUI.click(makeTO("//button[contains(text(),'Đăng nhập')]"))
+WebUI.click(makeTO("//button[contains(normalize-space(.),'Đăng nhập')]"))
 
 // Make sure we have item in cart
 WebUI.navigateToUrl(GlobalVariable.URL + '/shop')
 WebUI.click(makeTO("(//div[contains(@class,'product__thumb')]/a)[1]"))
-WebUI.click(makeTO("//button[contains(text(),'Thêm vào giỏ hàng')]"))
+WebUI.click(makeTO("//button[contains(normalize-space(.),'Thêm vào giỏ hàng')]"))
 WebUI.waitForAlert(5)
 WebUI.acceptAlert()
 
