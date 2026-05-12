@@ -18,7 +18,7 @@ pipeline {
             steps {
                 echo "Bat dau chay kien thu tu dong (headless) voi KRE..."
                 bat """
-                    "%KRE_HOME%".\\katalonc.exe -noSplash -runMode=console -projectPath="C:\\Users\\HP\\Desktop\\DATN\\Source\\test\\E-Gadgets\\RookBookStore.prj" -retry=0 -testSuitePath="Test Suites/TS_Admin/TS_AllAdmin" -browserType="Chrome (headless)" -apiKey="fdb34b80-ed30-4efc-830a-378361b6cd4b" -sendMail=true -emailRecipient="laothao2k2@gmail.com"
+                    "%KRE_HOME%".\\katalonc.exe -noSplash -runMode=console -projectPath="C:\\Users\\HP\\Desktop\\DATN\\Source\\test\\E-Gadgets\\RookBookStore.prj" -retry=0 -testSuitePath="Test Suites/TS_Admin/TS_AllAdmin" -browserType="Chrome (headless)" -apiKey="fdb34b80-ed30-4efc-830a-378361b6cd4b" -sendEmail="laothao2k2@gmail.com"
                 """
             }
         }
